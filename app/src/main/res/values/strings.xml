@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">Cellway</string>
+    <string name="title_activity_home">LOGO</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_repair">Repair your Gadget</string>
+    <string name="menu_requirment">Your Requirement</string>
+    <string name="menu_about">About Us</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_contact">Contact</string>
+    <string name="menu_rate">Rate</string>
+    <string name="menu_Logout">Logout</string>
+    <string name="menu_more">More</string>
+    <string name="app_upto_date">App Upto Date</string>
+    <string name="update_message">New Update Available</string>
+    <string name="update_now">Update Now</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="about">At Cellway our motto is to provide the best old gadget at best price. Cellway checks the quality of gadgets with 23 quality stages and provides best gadgets to our valuable customers. We make sure that our  customers will get the best gadgets.</string>
+
+
+    <string name="bookingPolicy">Booking of the gadget is done only after paying the booking amount  ₹ 2000/-
+    Booking will be confirmed within 15 min of paying the booking amount.
+    After Confirmation of Booking, customer will have a same day to collect the gadget from Cellway store.
+    Next day, the booking will be cancelled and refund will be initiated.</string>
+
+    <string name="shippingPolicy">Gadget will be shipped only after paying full amount of the gadget.
+Shipping charges will be bear by the coustmer.
+Shipping of the gadget will be done within 24 haurs of confirming the order.</string>
+
+    <string name="bookNow">Your gadget will be booked after paying booking amount of  2000\-
+Your booking will be confirmed within 15 min of payment.
+After Confirmation of Booking, customer will have a same day to collect the gadget from Cellway store.
+    Next day, the booking will be cancelled and refund will be initiated. </string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="msg_token_fmt">MyToken</string>
+
+    <string name="action_share">Share</string>
+    <string name="action_upload">Upload</string>
+    <string name="action_copy">Copy</string>
+    <string name="action_print">Print</string>
+    <string name="title_activity_home_navigation">HomeNavigationActivity</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+</resources>

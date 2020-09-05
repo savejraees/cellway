@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_marginLeft="5dp"
+android:layout_marginRight="5dp"
+android:layout_marginBottom="5dp"
+android:layout_marginTop="10dp"
+android:orientation="horizontal">
+
+<View
+    android:id="@+id/thumbnail1"
+    android:layout_weight="1"
+    android:layout_width="0dp"
+    android:background="@color/shimmerbackground"
+    android:layout_height="100dp"/>
+<View
+    android:id="@+id/thumbnai2"
+    android:layout_weight="1"
+    android:layout_width="0dp"
+    android:background="@color/shimmerbackground"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_height="100dp"/>
+</LinearLayout>

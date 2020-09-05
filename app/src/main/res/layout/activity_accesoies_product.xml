@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".activity.ProductActivity">
+
+    <RelativeLayout
+        android:id="@+id/relBackProductAccess"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#027BE9"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/imgBackProductAccess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/arrow_back" />
+
+        <TextView
+            android:id="@+id/txtProductAccessHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBrandAccessProduct"
+        android:layout_below="@id/relBackProductAccess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAccessProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rvBrandAccessProduct"
+        android:layout_marginTop="5dp" />
+
+    <RelativeLayout
+        android:id="@+id/relPriceAccess"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:visibility="gone"
+        android:background="@drawable/search_round"
+        android:gravity="center_vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="end"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="Sort"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imgPriceUpAccess"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/arrow_drop_down" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutPriceAccess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="left"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+
+        <RadioGroup
+            android:id="@+id/radioPriceAccess"
+            android:layout_width="match_parent"
+            android:gravity="left"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Low to High"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:text="High to Low"/>
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

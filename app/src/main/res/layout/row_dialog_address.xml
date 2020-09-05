@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:text="Enter Your Address"
+        android:textColor="@android:color/black"
+        android:textSize="30dp"
+        android:textStyle="italic"></TextView>
+
+    <EditText
+        android:id="@+id/bookPincode"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/roundedittext"
+        android:hint="Pincode*"
+        android:textColorHint="@color/hintColor"
+        android:inputType="number"
+        android:maxLength="6"
+        android:paddingLeft="10dp"
+        android:singleLine="true" />
+
+ <EditText
+        android:id="@+id/bookName"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:textColorHint="@color/hintColor"
+        android:background="@drawable/roundedittext"
+        android:hint="Name*"
+
+        android:paddingLeft="10dp"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/bookHouseNo"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:textColorHint="@color/hintColor"
+        android:background="@drawable/roundedittext"
+        android:hint="House No., Building Name*"
+        android:paddingLeft="10dp"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/bookRoad"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:textColorHint="@color/hintColor"
+        android:background="@drawable/roundedittext"
+        android:hint="Road Name, Area, Colony*"
+        android:paddingLeft="10dp"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/bookCity"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:textColorHint="@color/hintColor"
+        android:background="@drawable/roundedittext"
+        android:hint="City*"
+        android:paddingLeft="10dp"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/bookState"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:textColorHint="@color/hintColor"
+        android:background="@drawable/roundedittext"
+        android:hint="State*"
+        android:paddingLeft="10dp"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/bookContact"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:textColorHint="@color/hintColor"
+        android:background="@drawable/roundedittext"
+        android:hint="Contact no.*"
+        android:inputType="phone"
+        android:maxLength="10"
+        android:paddingLeft="10dp"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/bookEmail"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:textColorHint="@color/hintColor"
+        android:background="@drawable/roundedittext"
+        android:hint="Email.*"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="10dp"
+        android:singleLine="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/previous_address"
+        android:layout_marginLeft="10dp"
+        android:text="Same as Previous Address">
+
+    </CheckBox>
+
+    <Button
+        android:id="@+id/bookSubmitButton"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_background"
+        android:text="Submit"
+        android:textColor="@android:color/white" />
+
+
+
+</LinearLayout>

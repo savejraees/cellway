@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.Product">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/productToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#027BE9">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/sort"
+            android:gravity="center"
+            android:background="#FAF4F4"
+            android:paddingLeft="20dp"
+            android:drawableLeft="@drawable/sort_icon"
+            android:layout_weight="1"
+            android:text="sort"
+            android:textAlignment="textStart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="RtlCompat" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#888484"></View>
+
+        <Button
+            android:id="@+id/filter"
+            android:gravity="center"
+            android:background="#FAF4F4"
+            android:paddingLeft="20dp"
+            android:drawableLeft="@drawable/filter_icon"
+            android:layout_weight="1"
+            android:text="Filter"
+            android:textAlignment="textStart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="RtlCompat" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#888484"></View>
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/rvProduct"
+    android:layout_marginTop="1dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+</androidx.recyclerview.widget.RecyclerView>
+
+
+    <ProgressBar
+     android:visibility="gone"
+        android:id="@+id/progressbarProduct"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:indeterminateDrawable="@drawable/progress2"
+        ></ProgressBar>
+
+</LinearLayout>

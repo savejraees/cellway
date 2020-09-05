@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relative_cart"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+
+    <!-- Menu Item Image -->
+    <ImageView
+        android:id="@+id/imgcart"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:clickable="true"
+        android:foregroundGravity="center"
+        android:src="@drawable/viewcart"
+        android:tint="@color/white" />
+
+    <!-- Badge Count -->
+    <TextView
+        android:id="@+id/actionbar_notifcation_textview"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/circle_add"
+        android:gravity="center"
+        android:text=""
+        android:visibility="gone"
+        android:textColor="@color/black" />
+
+    <ImageView
+        android:id="@+id/notification_icon"
+        android:layout_toRightOf="@id/imgcart"
+        android:layout_width="29dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:clickable="true"
+        android:foregroundGravity="center"
+        android:src="@drawable/ic_notifications"/>
+
+    <ImageView
+        android:id="@+id/location_icon"
+        android:layout_toRightOf="@id/notification_icon"
+        android:layout_width="27dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:clickable="true"
+        android:foregroundGravity="center"
+        android:src="@drawable/ic_location"/>
+
+
+</RelativeLayout>

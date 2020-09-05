@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearMobileDest"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="1dp"
+    android:orientation="vertical"
+    app:cardCornerRadius="10dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="1dp"
+            android:paddingBottom="1dp">
+
+
+            <ImageView
+                android:id="@+id/img_mobile"
+                android:layout_width="60dp"
+                android:layout_height="105dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="5dp"
+                android:padding="1dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/samsug_demo" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp">
+
+                    <TextView
+                        android:id="@+id/tv_brand"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Redmi 7A"
+                        android:textColor="#000"
+                        android:textSize="12dp" />
+
+                    <!--                    <TextView-->
+                    <!--                        android:id="@+id/tv_model"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:paddingLeft="5dp"-->
+                    <!--                        android:text="7A"-->
+                    <!--                        android:textSize="12dp"-->
+                    <!--                        android:textColor="#000" />-->
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_gb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(Carbon Black,64 GB)"
+                    android:textColor="#000"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/tv_Warrenty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="In"
+                    android:textColor="#000"
+                    android:textSize="12dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹"
+                        android:textColor="#000"
+                        android:textSize="12dp"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/deduct_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center|left"
+                        android:paddingLeft="2dp"
+                        android:text="5,999"
+                        android:textColor="#000"
+                        android:textSize="12dp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutVisibility"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardBattery"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"
+                android:background="#EBE7E7">
+
+                <TextView
+
+                    android:id="@+id/tv_ram_rom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="6 GB RAM|64 GB Storage"
+                    android:textColor="@android:color/black"
+                    android:textSize="12dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"
+                android:background="#EBE7E7">
+
+
+                <TextView
+                    android:id="@+id/txtDeisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="16.23cm(6.39 inch) Full HD+Display"
+                    android:textColor="@android:color/black"
+                    android:textSize="12dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"
+                android:background="#EBE7E7">
+
+
+                <TextView
+                    android:id="@+id/tv_battery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="4000 mAh"
+                    android:textColor="@android:color/black"
+                    android:textSize="12dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="#EBE7E7">
+
+
+                <TextView
+                    android:id="@+id/tv_rear_camera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="48MP+13MP+8MP"
+                    android:textColor="@android:color/black"
+                    android:textSize="12dp" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="#EBE7E7">
+
+
+                <TextView
+                    android:id="@+id/tv_front_camera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="20MP Front Camera"
+                    android:textColor="@android:color/black"
+                    android:textSize="12dp" />
+
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

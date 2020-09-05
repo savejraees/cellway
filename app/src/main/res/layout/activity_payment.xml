@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.PaymentActivity">
+
+
+    <ImageView
+        android:id="@+id/imgBanner"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/blue12"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPayment"
+        android:layout_below="@id/imgBanner"
+        android:layout_marginRight="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnPay"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Pay Now"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"/>
+</RelativeLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "405922937099",
+    "firebase_url": "https://mobileapp-b606a.firebaseio.com",
+    "project_id": "mobileapp-b606a",
+    "storage_bucket": "mobileapp-b606a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:405922937099:android:e175ca246a3bf70f264a0e",
+        "android_client_info": {
+          "package_name": "com.cellway.Cellway"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "405922937099-aknonar3atj9qfte49nictiq7u9ig2d6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cellway.Cellway",
+            "certificate_hash": "548842338c3a1a7cddace196a92ad7e7b3b8adf4"
+          }
+        },
+        {
+          "client_id": "405922937099-tno8bm6gf8172l58q36ddp8dqvusovki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoFM70Lt8pq90uiYyA7QEFHW9ZsmZcXwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "405922937099-tno8bm6gf8172l58q36ddp8dqvusovki.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/closeBottom"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_close"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You May Add"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"
+            android:textColor="@android:color/black"/>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="#BAB5B5" />
+
+    <LinearLayout
+        android:id="@+id/linearBack"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+                android:id="@+id/linearAddPlace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/add_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ADD" />
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/imgCheckCover"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/add_check"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp">
+
+
+                <ImageView
+                    android:id="@+id/img_mobile"
+                    android:layout_width="90dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="5dp"
+                    android:padding="1dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/cover_img" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="3dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/tv_brand_Back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:textSize="18dp"
+                        android:text="Designed Back Cover for Samsung Galaxy A31"
+                        android:textColor="#000" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="5dp">
+
+                        <TextView
+                            android:id="@+id/txtPriceBack"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="₹ 399"
+                            android:textColor="#000"
+                            android:textStyle="bold"></TextView>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="#BAB5B5" />
+
+    <LinearLayout
+        android:id="@+id/linearTempered"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="150dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+               android:id="@+id/linearAddGlass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/add_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ADD" />
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/imgCheckGlass"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/add_check"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp">
+
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="5dp"
+                    android:padding="1dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/glass_img" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="3dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:textSize="18dp"
+                        android:text="Cellway designed Edge to Edge Tempered Glass"
+                        android:textColor="#000" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="5dp">
+
+                        <TextView
+                            android:id="@+id/txtPriceTemper"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="₹ 399"
+                            android:textColor="#000"
+                            android:textStyle="bold"></TextView>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="#BAB5B5" />
+
+    <TextView
+         android:id="@+id/txtContinue"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:text="Skip and Continue"
+        android:textSize="18dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:background="@color/colorPrimaryDark"
+        android:layout_gravity="right"
+        android:textColor="@color/white"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="#BAB5B5" />
+
+</LinearLayout>

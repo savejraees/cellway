@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/CardProductAccess"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="5dp"
+    android:orientation="vertical"
+    app:cardCornerRadius="10dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="1dp"
+            android:paddingBottom="1dp">
+
+
+            <ImageView
+                android:id="@+id/img_Product_acces"
+                android:layout_width="120dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="5dp"
+                android:padding="1dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/samsug_demo" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="vertical"
+                android:paddingLeft="15dp">
+
+
+                <TextView
+                    android:id="@+id/tv_Name_Access"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:text="Redmi Earphone"
+                    android:textColor="#000"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_ColorAccess"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Active Black, Wireless in the Ear"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹"
+                        android:textColor="#000"
+                        android:textSize="18dp"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/deduct_price_Access"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center|left"
+                        android:paddingLeft="2dp"
+                        android:text="5,999"
+                        android:textColor="#000"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/original_price_Access"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center|left"
+                        android:paddingLeft="2dp"
+                        android:text="6,999"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtOffAccess"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center|left"
+                        android:paddingLeft="2dp"
+                        android:text="4%off"
+                        android:textColor="#0BAC11"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

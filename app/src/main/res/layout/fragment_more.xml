@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".fragment.More">
+
+    <Button
+        android:id="@+id/faq"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textAllCaps="false"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/button_background"
+        android:textColor="@color/white"
+        android:text="FAQs"/>
+
+    <Button
+        android:id="@+id/legal"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textAllCaps="false"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_background"
+        android:textColor="@color/white"
+        android:text="Legal"/>
+
+    <Button
+        android:id="@+id/bookingPolicy"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textAllCaps="false"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_background"
+        android:textColor="@color/white"
+        android:text="Booking Policy"/>
+<!--    <Button-->
+<!--        android:id="@+id/shippingPolicy"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:background="@drawable/button_background"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:text="Shipping Policy"/>-->
+
+
+    <Button
+        android:id="@+id/bankDetails"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textAllCaps="false"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_background"
+        android:textColor="@color/white"
+        android:text="For Buisness/Bank details"/>
+</LinearLayout>

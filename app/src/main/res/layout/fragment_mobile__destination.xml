@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.Mobile_Destination">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#027BE9"
+            android:orientation="horizontal">
+
+<!--         <ImageView-->
+<!--             android:id="@+id/backfromMob"-->
+<!--             android:layout_marginLeft="10dp"-->
+<!--             android:layout_width="50dp"-->
+<!--             android:layout_height="wrap_content"-->
+<!--             android:layout_gravity="center_vertical"-->
+<!--             android:src="@drawable/arrow_back">-->
+
+<!--         </ImageView>-->
+
+<!--            <TextView-->
+<!--                android:layout_marginRight="50dp"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textSize="20dp"-->
+<!--                android:text="Mobile Destination"></TextView>-->
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/destinationToobar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#027BE9">
+
+            </androidx.appcompat.widget.Toolbar>
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="-10dp"
+        android:layout_marginBottom="-10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_margin="5dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img7000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/range_image"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/img7000"
+                android:layout_alignTop="@+id/img7000"
+                android:layout_alignRight="@+id/img7000"
+                android:layout_alignBottom="@+id/img7000"
+                android:gravity="center"
+                android:text="under\n7000" />
+        </RelativeLayout>
+
+         <RelativeLayout
+             android:layout_margin="5dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/Img7_15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/range_image"
+                android:textAlignment="center"
+
+                />
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignLeft="@+id/Img7_15"
+                 android:layout_alignTop="@+id/Img7_15"
+                 android:layout_alignRight="@+id/Img7_15"
+                 android:layout_alignBottom="@+id/Img7_15"
+                 android:gravity="center"
+                 android:text="7000-\n15000" />
+
+        </RelativeLayout>
+
+         <RelativeLayout
+             android:layout_margin="5dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img15_30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/range_image"
+                />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignLeft="@+id/img15_30"
+                 android:layout_alignTop="@+id/img15_30"
+                 android:layout_alignRight="@+id/img15_30"
+                 android:layout_alignBottom="@+id/img15_30"
+                 android:gravity="center"
+                 android:text="15000-\n30000"/>
+        </RelativeLayout>
+
+   <RelativeLayout
+      android:layout_margin="5dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_above30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/range_image"
+                />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignLeft="@+id/img_above30"
+          android:layout_alignTop="@+id/img_above30"
+          android:layout_alignRight="@+id/img_above30"
+          android:layout_alignBottom="@+id/img_above30"
+          android:gravity="center"
+          android:text="above\n30000"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMobile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center" />
+
+
+
+            <ProgressBar
+                android:visibility="gone"
+                android:id="@+id/progressbarMDest"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:indeterminateDrawable="@drawable/progress2"
+              ></ProgressBar>
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

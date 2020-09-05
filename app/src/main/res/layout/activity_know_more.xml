@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.KnowMoreActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#027BE9">
+
+            <ImageView
+                android:id="@+id/imgBackKnow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrow_back"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:layout_centerInParent="true"
+                android:fontFamily="sans-serif"
+                android:text="Cellway Protection Plan"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="110dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_break"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/know_more_bn"/>
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="90dp"
+                    android:scaleType="fitXY"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/img_right3"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:background="@drawable/know_more_shape">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:textColor="@color/white"
+                            android:text="Protection Plan For Your Smart Gadget"/>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="sans-serif"
+            android:text="Key Features"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvKeyFeature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/blue12"
+            android:scaleType="fitXY"
+            android:layout_marginTop="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_marginTop="10dp"
+            android:paddingTop="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+                <ImageView
+                    android:src="@drawable/free_pickup2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"/>
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Free Doorstep\nPick-up &amp; Drop"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#7A7777"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+                <ImageView
+                    android:src="@drawable/hour_24_2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="24 hour\nPick-up"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#7A7777"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+                <ImageView
+                    android:src="@drawable/enquire2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:text="One No. for all\nyour queries\n9788022224"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:text="* For more information mail on - enquiry@cellway.in"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:text="* Detailed policy will be send to your Registered mail-id"/>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

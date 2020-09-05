@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/login_image"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-80dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_register"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#1A3383"
+            android:clickable="false"
+            android:src="@drawable/app_logo" />
+
+        <!--        app:civ_border_width="2dp"-->
+<!--        app:civ_border_color="#1A3383"-->
+
+        <TextView
+            android:id="@+id/tv_registerPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#1A3383"
+            android:text="Upload Photo"/>
+    </LinearLayout>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:cardCornerRadius="2dp"
+                app:cardElevation="5dp"
+                android:elevation="5dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:id="@+id/name_cardView">
+
+                <EditText
+                    android:id="@+id/edt_Name"
+                    android:background="#ad5b5d"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Name"
+                    android:drawableLeft="@drawable/name"
+                    android:textSize="13sp"
+                    android:inputType="text"
+                    android:textColorHint="#fff"
+                    android:textColor="@android:color/white"
+                    android:paddingLeft="10dp"
+                   />
+            </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="5dp"
+            android:elevation="5dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:id="@+id/mobile_cardView">
+
+            <EditText
+                android:id="@+id/edt_mobile"
+                android:background="#ad5b5d"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Mobile No."
+                android:drawableLeft="@drawable/mobile_icon"
+                android:textSize="13sp"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:paddingLeft="10dp"
+                android:textColorHint="#fff"
+                android:textColor="@android:color/white"
+                />
+        </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:cardCornerRadius="2dp"
+                android:elevation="5dp"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="#746D6D"
+                android:layout_gravity="center"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:id="@+id/email_cardView">
+
+                <EditText
+                    android:id="@+id/edt_email"
+                    android:background="#ad5b5d"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Email (Optional)"
+                    android:drawableLeft="@drawable/email"
+                    android:textSize="13sp"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="10dp"
+                    android:textColorHint="#fff"
+                    android:textColor="#fff"
+                   />
+            </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:cardCornerRadius="2dp"
+            android:elevation="5dp"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="#746D6D"
+            android:layout_gravity="center"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:id="@+id/Password_cardView">
+
+            <EditText
+                android:id="@+id/edt_password"
+                android:background="#ad5b5d"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Password"
+                android:drawableLeft="@drawable/password"
+                android:textSize="13sp"
+                android:inputType="textPassword"
+                android:paddingLeft="10dp"
+                android:textColorHint="#fff"
+                android:textColor="#fff"
+               />
+        </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:cardCornerRadius="2dp"
+                android:elevation="5dp"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="#746D6D"
+                android:layout_gravity="center"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:id="@+id/cnfmPassword_cardView">
+
+                <EditText
+                    android:id="@+id/edt_cnfmPassword"
+                    android:background="#ad5b5d"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Confirm Password"
+                    android:drawableLeft="@drawable/password"
+                    android:textSize="13sp"
+                    android:inputType="textPassword"
+                    android:paddingLeft="10dp"
+                    android:textColorHint="#fff"
+                    android:textColor="#fff"
+                     />
+            </androidx.cardview.widget.CardView>
+
+          <!--   <androidx.cardview.widget.CardView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:cardCornerRadius="2dp"
+                 app:cardElevation="5dp"
+                 android:elevation="5dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:id="@+id/photo_cardView">
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:background="#ad5b5d"
+                     android:orientation="horizontal">
+
+                     <TextView
+                         android:layout_weight="1"
+                         android:gravity="center_vertical"
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:text="Upload Photo"
+                         android:textSize="13sp"
+                         android:inputType="text"
+                         android:paddingLeft="10dp"
+                         android:textColor="#fff"
+                         android:id="@+id/edt_user" />
+
+                     <ImageView
+                         android:layout_weight="2"
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:src="@drawable/image_icon"/>
+
+                 </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+-->
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_below="@+id/linear_spinner"
+                android:id="@+id/already_user"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:cardCornerRadius="7dp"
+                app:cardElevation="5dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="#746D6D"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                tools:ignore="InvalidId">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/buttRegister"
+                    android:text="Register"
+                    android:background="#000"
+                    android:textColor="#fff"
+                    android:gravity="center"
+                    android:textSize="18sp"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+
+                    android:id="@+id/tv_createAccount"
+                    android:textColor="#1A3383"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Already registered. Login here"/>
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+        <ProgressBar
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:indeterminateDrawable="@drawable/progress2"
+            android:id="@+id/progressbarRegister"
+            android:layout_centerInParent="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            ></ProgressBar>
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

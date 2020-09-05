@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:cardCornerRadius="2dp"
+        android:layout_marginTop="2dp"
+        android:elevation="2dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.6"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="3dp">
+
+                <TextView
+                    android:id="@+id/brandOrder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Samsung"></TextView>
+
+                <TextView
+                    android:id="@+id/modelOrder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="3dp"
+                    android:text="J7"></TextView>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/orderGb"
+                android:layout_gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="32"></TextView>
+
+            <LinearLayout
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/orderAmount"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50000"></TextView>
+                <TextView
+
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/-"></TextView>
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/orderdate"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="22/11/2019"></TextView>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height=".5dp"-->
+<!--        android:layout_marginLeft="5dp"-->
+<!--        android:layout_marginRight="5dp"-->
+<!--        android:background="#AAA7A7"></View>-->
+</LinearLayout>

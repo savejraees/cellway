@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+  <!--  <TextView
+
+        android:layout_marginLeft="10dp"
+        android:id="@+id/tv_nm_clr_str"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingLeft="5dp"
+        android:text="Redmi 7A(Matte Black,32 GB) (2 GB RAM)"
+        android:textColor="#000" />
+
+<LinearLayout
+    android:layout_marginLeft="10dp"
+    android:layout_weight="1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:background="#02A551"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_star"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="4.6 *"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+      >
+
+        <TextView
+            android:paddingLeft="2dp"
+            android:id="@+id/tv_rating"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start"
+            android:text="9,565 ratings" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/flip_icon" />
+    </LinearLayout>
+
+
+
+</LinearLayout>
+
+    <RelativeLayout
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#02A551"
+            android:text="Extra ₹ 5000 discount"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:paddingLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/deduct_price"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="5,999"
+            android:gravity="center|left"
+            android:textColor="#000"/>
+        <TextView
+            android:paddingLeft="10dp"
+            android:id="@+id/tv_original_Price"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="10dp"
+            android:text="6,999"
+            android:gravity="center"/>
+        <TextView
+            android:paddingLeft="10dp"
+            android:id="@+id/tv_off"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="10dp"
+            android:text="14% off"
+            android:textColor="#02A551"/>
+
+
+    </LinearLayout>
+
+    &lt;!&ndash;  <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_marginTop="5dp"
+          android:layout_weight="6"
+          android:orientation="horizontal">
+
+
+          <LinearLayout
+              android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:layout_weight="7"
+              android:orientation="vertical">
+
+
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_weight=".7"
+                  android:layout_marginTop="5dp"
+                  android:orientation="horizontal">
+
+                  <LinearLayout
+                      android:layout_width="0dp"
+                      android:layout_height="match_parent"
+                      android:layout_weight="1.2"
+                      android:background="#02A551">
+
+                      <TextView
+                          android:id="@+id/tv_star"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:gravity="center"
+                          android:text="4.6 *"
+                          android:textColor="#fff" />
+
+                  </LinearLayout>
+
+                  <LinearLayout
+                      android:layout_width="0dp"
+                      android:layout_height="match_parent"
+                      android:layout_weight="2">
+
+                      <TextView
+                          android:paddingLeft="2dp"
+                          android:id="@+id/tv_rating"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:gravity="start"
+                          android:text="9,565 ratings" />
+                  </LinearLayout>
+
+                  <LinearLayout
+                      android:layout_width="0dp"
+                      android:layout_height="match_parent"
+                      android:layout_weight="5">
+
+                      <ImageView
+                          android:layout_width="80dp"
+                          android:layout_height="match_parent"
+                          android:layout_gravity="center"
+                          android:src="@drawable/flip_icon" />
+                  </LinearLayout>
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_weight="1"
+                  android:orientation="horizontal">
+                  <TextView
+                      android:id="@+id/deduct_price"
+                      android:layout_width="0dp"
+                      android:layout_weight="2.5"
+                      android:layout_height="match_parent"
+                      android:text="5,999"
+                      android:gravity="center|left"
+                      android:textColor="#000"/>
+                  <TextView
+                      android:id="@+id/tv_original_Price"
+                      android:layout_width="0dp"
+                      android:layout_weight="2.5"
+                      android:layout_height="match_parent"
+                      android:text="6,999"
+                      android:gravity="center"/>
+                  <TextView
+                      android:id="@+id/tv_off"
+                      android:layout_width="0dp"
+                      android:layout_weight="5"
+                      android:layout_height="match_parent"
+                      android:text="14% off"
+                      android:textColor="#02A551"/>
+
+
+              </LinearLayout>
+
+              <TextView
+                  android:id="@+id/tv_exchange"
+                  android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:layout_weight="1"
+                  android:text="Exchange,No cost EMI available"
+                  android:textColor="#000"/>
+
+          </LinearLayout>
+
+
+      </LinearLayout>
+  &ndash;&gt;
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="5dp"></View>-->
+</LinearLayout>

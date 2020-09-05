@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtRAm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="8 GB RAM"/>
+
+        <TextView
+            android:id="@+id/txtROM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="128 GB ROM"/>
+
+        <TextView
+            android:id="@+id/txtDisplayHigh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="16.51cm(6.5 inch) Full\nHD+Display"/>
+
+        <TextView
+            android:id="@+id/txtRearCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="64MP + 13,2,8MP Dual\n Rear Camera"/>
+
+        <TextView
+            android:id="@+id/txtProcessor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Qualcomm Snapdragon\n855 Plus Octa Core"/>
+
+        <TextView
+            android:id="@+id/txtBatteryHigh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="4000 mAh Battery"/>
+
+        <TextView
+            android:id="@+id/txtVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Pie 9"/>
+
+        <TextView
+            android:id="@+id/txtWaarnty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Warranty Available for 1 Year"/>
+
+        <TextView
+            android:id="@+id/txtPolicy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="7 Days Replacement Policy"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardCart"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:elevation="5dp"
+            android:layout_gravity="center_horizontal"
+            app:cardElevation="5dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:text="ADD TO CART"/>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnBuyNow"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorPrimaryDark"
+            android:text="BUY NOW"
+            android:layout_marginTop="20dp"
+            android:textColor="#FFFFFF" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E6E5E5"/>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

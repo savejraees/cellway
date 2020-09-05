@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:src="@drawable/logo_circle"></ImageView>-->
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgProfile"
+                android:layout_marginTop="30dp"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                app:civ_border_width="2dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/app_logo"
+                app:civ_border_color="@color/colorPrimaryDark">
+
+            </de.hdodenhof.circleimageview.CircleImageView>
+        </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <EditText
+            android:id="@+id/profileNme"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Enter Name"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/roundedittext"
+           />
+        <EditText
+            android:id="@+id/profileNumber"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
+            android:focusable="false"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/roundedittext"
+            android:hint="Enter Mobile"
+           />
+
+        <EditText
+            android:id="@+id/profileEmail"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/roundedittext"
+            android:hint="Enter Email"
+           />
+
+
+     <EditText
+            android:id="@+id/profilePincode"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
+            android:focusable="false"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/roundedittext"
+            android:hint="Pincode*"
+           />
+
+     <EditText
+            android:id="@+id/profileHouseNo"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:focusable="false"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/roundedittext"
+            android:hint="House No., Building Name*"
+           />
+
+        <EditText
+            android:id="@+id/profileRoad"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:focusable="false"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/roundedittext"
+            android:hint="Road Name, Area, Colony*"
+           />
+
+       <EditText
+            android:id="@+id/profileCity"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+           android:focusable="false"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/roundedittext"
+            android:hint="City*"
+           />
+        <EditText
+            android:id="@+id/profileState"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:focusable="false"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/roundedittext"
+            android:hint="State*"
+           />
+
+
+
+
+        <Button
+            android:id="@+id/updateButton"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_background"
+            android:text="Update"/>
+
+    </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+        <ProgressBar
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:indeterminateDrawable="@drawable/progress2"
+            android:id="@+id/progressbarProfile"
+            android:layout_centerInParent="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            ></ProgressBar>
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
+
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:background="#ECEAE9"-->
+<!--    android:layout_height="match_parent">-->
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginBottom="15dp"-->
+<!--            android:layout_marginLeft="15dp"-->
+<!--            android:layout_marginRight="15dp"-->
+<!--            android:background="@drawable/roundedittext"-->
+<!--            android:orientation="vertical">-->
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/background"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="200dp"-->
+<!--                android:background="@drawable/profile_back">-->
+
+<!--            </RelativeLayout>-->
+<!--            <LinearLayout-->
+<!--                android:id="@+id/liner_profileimage"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@id/background"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginTop="-100dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                >-->
+<!--                <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                    android:id="@+id/imgProfile"-->
+<!--                    civ_border_width="10dp"-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:src="@drawable/profile" />-->
+
+
+<!--            </LinearLayout>-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@id/liner_profileimage"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="#ECEAE9"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/profileNme"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_marginLeft="5dp"-->
+<!--                    android:layout_marginRight="5dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:focusableInTouchMode="true"-->
+<!--                    android:background="@drawable/roundedittext"-->
+<!--                    android:hint="Savej Saifi"-->
+<!--                    android:inputType="text"-->
+<!--                    android:maxLength="30"-->
+<!--                    android:paddingLeft="15dp" />-->
+
+
+<!--                <EditText-->
+<!--                    android:focusable="false"-->
+<!--                    android:clickable="false"-->
+<!--                    android:id="@+id/profileNumber"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_marginLeft="5dp"-->
+<!--                    android:layout_marginRight="5dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:background="@drawable/roundedittext"-->
+<!--                    android:hint="123456789"-->
+<!--                    android:inputType="phone"-->
+<!--                    android:maxLength="10"-->
+<!--                    android:paddingLeft="15dp" />-->
+
+
+<!--                <EditText-->
+<!--                    android:id="@+id/profileEmail"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_marginLeft="5dp"-->
+<!--                    android:layout_marginRight="5dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:background="@drawable/roundedittext"-->
+<!--                    android:hint="savej@gmail.com"-->
+<!--                    android:inputType="textEmailAddress"-->
+<!--                    android:paddingLeft="15dp" />-->
+
+
+
+<!--             &lt;!&ndash;   <EditText-->
+<!--                    android:id="@+id/edtPassword"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_marginLeft="5dp"-->
+<!--                    android:layout_marginRight="5dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:background="@drawable/roundedittext"-->
+<!--                    android:hint="Address"-->
+<!--                    android:paddingLeft="15dp" />&ndash;&gt;-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/updateButton"-->
+<!--                    android:background="@drawable/button_background"-->
+<!--                    android:layout_marginLeft="5dp"-->
+<!--                    android:layout_marginRight="5dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:textColor="#fff"-->
+<!--                    android:text="Update"/>-->
+<!--            </LinearLayout>-->
+<!--        </LinearLayout>-->
+<!--    </ScrollView>-->
+<!--</RelativeLayout>-->

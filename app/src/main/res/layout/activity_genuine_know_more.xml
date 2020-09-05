@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F3F3"
+    tools:context=".activity.GenuineKnowMoreActivity">
+
+    <RelativeLayout
+        android:id="@+id/rel"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#027BE9">
+
+        <ImageView
+            android:id="@+id/imgBackGen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_back"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif"
+            android:text="Genuine and know More"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_below="@id/rel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/genImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/round_image"
+            android:scaleType="fitXY"
+            android:src="@drawable/blue12" />
+
+        <TextView
+            android:id="@+id/txtGen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="18dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:fontFamily="sans-serif"/>
+    </LinearLayout>
+</RelativeLayout>

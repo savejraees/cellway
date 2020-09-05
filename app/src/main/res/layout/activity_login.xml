@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="60">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="150dp">
+
+<!--                <ImageView-->
+
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:background="@drawable/circle_image_view"-->
+<!--                    android:src="@drawable/app_icon_main"></ImageView>-->
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_marginTop="30dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    app:civ_border_width="2dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/app_logo"
+                    app:civ_border_color="@color/colorPrimaryDark">
+
+
+<!--                    app:civ_border_width="2dp"-->
+                </de.hdodenhof.circleimageview.CircleImageView>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:gravity="center"
+        android:layout_weight="40"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="10dp"
+            android:elevation="10dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:id="@+id/user_cardView">
+
+            <EditText
+                android:background="#ad5b5d"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Mobile No."
+                android:drawableLeft="@drawable/mobile_icon"
+                android:textSize="13sp"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:paddingLeft="10dp"
+                android:textColorHint="#fff"
+                android:textColor="#fff"
+                android:id="@+id/edt_mobile" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:cardCornerRadius="2dp"
+            android:elevation="5dp"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="#746D6D"
+            android:layout_gravity="center"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:id="@+id/Password_cardView">
+
+            <EditText
+                android:background="#ad5b5d"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Password"
+                android:drawableLeft="@drawable/password"
+                android:textSize="13sp"
+                android:inputType="textPassword"
+                android:paddingLeft="10dp"
+                android:textColorHint="#fff"
+                android:textColor="#fff"
+                android:id="@+id/edt_password" />
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:gravity="right">
+
+            <TextView
+                android:id="@+id/gotToForgt"
+                android:textColor="#1A3383"
+                android:layout_marginTop="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Forget Password?"/>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_below="@+id/linear_spinner"
+            android:id="@+id/submit_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:cardCornerRadius="7dp"
+            android:elevation="10dp"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="#746D6D"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            tools:ignore="InvalidId">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/buttLogin"
+                android:text="Login"
+                android:background="#000"
+                android:textColor="#fff"
+                android:gravity="center"
+                android:textSize="18sp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/goToRegister"
+                android:textColor="#1A3383"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"
+                android:text="Create New Account"/>
+        </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:visibility="gone"
+        android:indeterminateDrawable="@drawable/progress2"
+        android:id="@+id/progressbar"
+        android:layout_centerInParent="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+       ></ProgressBar>
+
+</RelativeLayout>

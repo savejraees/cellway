@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.AccesoriesSubCategoryActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#027BE9">
+
+        <ImageView
+            android:id="@+id/imgBackAccessSubCat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/arrow_back" />
+
+        <TextView
+            android:id="@+id/txtAccessoriesSubCat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="sans-serif"
+            android:layout_toRightOf="@id/imgBackAccessSubCat"
+            android:text="Accessories Product"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <RelativeLayout
+            android:id="@+id/relative_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center">
+
+            <!-- Menu Item Image -->
+            <ImageView
+                android:id="@+id/imgcart"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:clickable="true"
+                android:foregroundGravity="center"
+                android:src="@drawable/viewcart"
+                android:tint="@color/white" />
+
+            <!-- Badge Count -->
+            <TextView
+                android:id="@+id/txtCartAccessSubCat"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:visibility="gone"
+                android:background="@drawable/circle_add"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/black" />
+
+            <ImageView
+                android:id="@+id/notification_icon"
+                android:layout_toRightOf="@id/imgcart"
+                android:layout_width="29dp"
+                android:layout_height="29dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:clickable="true"
+                android:foregroundGravity="center"
+                android:src="@drawable/ic_notifications"/>
+
+            <ImageView
+                android:id="@+id/location_icon"
+                android:layout_toRightOf="@id/notification_icon"
+                android:layout_width="27dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:clickable="true"
+                android:foregroundGravity="center"
+                android:src="@drawable/ic_location"/>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F8F5F5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp">
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/accesoriesSubCat_viewpagers"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                    android:id="@+id/dots_indicator_accessSubCat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="2dp"
+                    app:dotsColor="#989595"
+                    app:dotsCornerRadius="4dp"
+                    app:dotsSize="9dp"
+                    app:dotsSpacing="3dp"
+                    app:dotsWidthFactor="2"
+                    app:progressMode="false"
+                    app:selectedDotColor="#051B97" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAccessSubCategory"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

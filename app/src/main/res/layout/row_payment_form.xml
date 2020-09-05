@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginBottom="2dp"
+    android:id="@+id/cardPayment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_weight="1.2"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="0dp">
+
+            <CheckBox
+                android:id="@+id/chechPayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleX="1"
+                android:scaleY="1"
+                android:button="@drawable/custom_checkbox"
+                />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imgPayment"
+            android:layout_width="match_parent"
+            android:scaleType="fitXY"
+            android:layout_height="0dp"
+            android:layout_weight="6"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

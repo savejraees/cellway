@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="5dp">
+
+<ImageView
+    android:id="@+id/imgPen"
+    android:layout_width="25dp"
+    android:layout_height="25dp"
+    android:src="@drawable/pencil"
+    android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:id="@+id/txtofferKey"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif"
+        android:text="5% Unlimited Cashback on Flipkart Axis Bank Credit Card."
+        android:layout_weight="1"/>
+
+    <ImageView
+        android:id="@+id/imgGo"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/chevron_right"
+        android:layout_marginLeft="10dp" />
+
+</LinearLayout>

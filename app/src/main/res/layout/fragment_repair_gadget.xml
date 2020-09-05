@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECEAE9"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.RepairGadget">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#ECEAE9"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/RepairBrand"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:singleLine="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/roundedittext"
+            android:hint="Brand"
+            android:inputType="text"
+            android:maxLength="30"
+            android:paddingLeft="15dp" />
+
+
+        <EditText
+            android:id="@+id/RepairModel"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:singleLine="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/roundedittext"
+            android:hint="Model"
+            android:inputType="text"
+            android:maxLength="10"
+            android:paddingLeft="15dp" />
+
+
+        <EditText
+            android:id="@+id/RepairColor"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:singleLine="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/roundedittext"
+            android:hint="Color"
+            android:inputType="text"
+            android:paddingLeft="15dp" />
+
+
+
+        <EditText
+            android:id="@+id/RepairDescription"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:singleLine="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/roundedittext"
+            android:hint="Description"
+            android:paddingLeft="15dp" />
+
+        <Button
+            android:id="@+id/repairMobile"
+            android:background="@drawable/button_background"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="#fff"
+            android:text="Submit"/>
+
+        <ProgressBar
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:indeterminateDrawable="@drawable/progress2"
+            android:id="@+id/progressbarRepair"
+            android:layout_centerInParent="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            ></ProgressBar>
+
+    </LinearLayout>
+
+</LinearLayout>

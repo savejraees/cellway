@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginEnd="5dp"
+    android:layout_marginStart="3dp"
+    app:cardCornerRadius="10dp"
+    android:id="@+id/cardLatestAccess"
+    android:orientation="vertical">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#4AC368"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="120dp"
+            android:gravity="center"
+            android:layout_margin="2dp"
+            android:padding="5dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_latst_access"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mobile1"/>
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#CFCCCC"></View>
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="2dp"
+            android:paddingLeft="2dp"
+            android:paddingBottom="40dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/accessName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp"
+                    android:text="OnePlus Bullets Wireless Z Bluetooth"/>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs."
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    />
+                <TextView
+
+                    android:paddingLeft="4dp"
+                    android:id="@+id/access_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7,449"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    />
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

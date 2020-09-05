@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:theme="@style/MyCheck"
+            android:id="@+id/chkSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:paddingLeft="5dp"
+            android:id="@+id/tv_series"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Series"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+
+    <View
+        android:layout_marginTop="5dp"
+        android:background="#615C5C"
+        android:layout_width="match_parent"
+        android:layout_height=".5dp">
+
+    </View>
+
+</LinearLayout>

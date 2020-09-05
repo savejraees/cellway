@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context=".fragment.FAQs">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="FAQs"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="5dp"
+            android:text="What is Cellway?"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15sp"
+            android:paddingLeft="15sp"
+            android:text="Cellway is an online platform that enables customers to buy old gadgets like Smart phones, Tablets, Smart Accessories, and much more."
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="5dp"
+            android:text="What you mean by assured Sale?"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15sp"
+            android:paddingLeft="15sp"
+            android:text="By assured sale we means that once you book a gadget from Cellway. We assure that booked gadget is received by customer with assurance letter of Cellway."
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="5dp"
+            android:text="Are our gadget refurbished?"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15sp"
+            android:paddingLeft="15sp"
+            android:text="No, Cellway does not sale refurbished gadgets. Gadgets sold by Cellway are customers returned."
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="5dp"
+            android:text="How Cellway is different from other classified websites?"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15sp"
+            android:paddingLeft="15sp"
+            android:text="Cellway offers the best used gadgets to the customers. Each gadget sold by Cellway is checked by expert technicians and Cellway provides 7 days warranty on each gadget."
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="5dp"
+            android:text="Does Cellway provides courier facility?"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15sp"
+            android:paddingLeft="15sp"
+            android:text="Yes, Cellway provides courier facility after paying full amount to Cellway and our team will ship your gadget within 24 hours of booking."
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="5dp"
+            android:text="Does COD Services Available?"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15sp"
+            android:paddingLeft="15sp"
+            android:text="Yes, Cellway provide COD services on some terms and conditions."
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <CheckBox
+            android:id="@+id/chkterm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="5dp"
+            android:text="Terms and Conditions"
+            android:textSize="20dp"
+            android:theme="@style/MyCheck"></CheckBox>
+
+
+        <LinearLayout
+           android:visibility="gone"
+            android:id="@+id/txtTermandCondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginRight="15sp"-->
+<!--                android:paddingLeft="15sp"-->
+<!--                android:text="FREE SHIPPING ALL INDIA ONLY ON FULL ADVANCE PAYMENT."-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15sp"-->
+<!--                android:textStyle="bold" />-->
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15sp"
+                android:paddingLeft="15sp"
+                android:text="1) SHIPPING CHARGES WILL BE TAKEN FROM CUSTOMERS DEPENDING ON ORDER SIZE."
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15sp"
+                android:paddingLeft="15sp"
+                android:text="2) Rs.2000/- WILL BE TAKEN AS ADVANCE FOR BOOKING AND THIS AMOUNT WILL NOT BE REFUNDED IN ANY CASE IF YOU DON'T ACCEPT THE DELIVERY OF COURIER."
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15sp"
+                android:paddingLeft="15sp"
+                android:text="3) CELLWAY GADGETS WILL NOT HEAR ANY EXCUSE FOR NOT ACCEPTING THE ORDER HENCE NO REFUND WILL BE GIVEN FOR NOT ACCEPTING COD ORDER."
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15sp"
+                android:paddingLeft="15sp"
+                android:text="4) COD SERVICE WILL BE GIVEN ONLY ON WARRANTY PRODUCTS. OUT OF WARRANTY PRODUCT NO COD WILL BE PROVIDED."
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15sp"
+                android:paddingLeft="15sp"
+                android:text="PLEASE READ ALL THIS BEFORE MAKING COD ORDER."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15sp"
+                android:paddingLeft="15sp"
+                android:text="DELIVERY CHARGES FOR COD ORDER."
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15sp"
+                android:paddingLeft="15sp"
+                android:text="upto -15000 rs 500\n15k - 30000 rs 1000\n30k - 50000 rs 1500\n50- Above rs 2000"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:layout_marginRight="15sp"-->
+<!--                android:paddingLeft="15sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:text="मुफ्त शिपिंग सभी भारत केवल पूर्ण अग्रिम भुगतान पर"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15sp" />-->
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15sp"
+                android:paddingLeft="15sp"
+                android:text="1) कसटंसर से शिपिंग शुल्क लिया जाएगा ऑर्डर साइज के तहत ।\n2) ₹2000/- से बुकिंग के आदेश के लिए अग्रिम के रूप में लिया जाएगा और यह राशि किसी भी मामले में वापसी नहीं होगी यदि आप आडर लेने से मना करते है।\n3) सैलवे गैजेट ऑर्डर स्वीकार नहीं करने के लिए कोई उत्तेजना नहीं सुनेंगे ओर COD ऑर्डर स्वीकार न करने के लिए कोई धनवापसी नहीं दी जाएगी।\n4) COD सेवा केवल WARRANTY उत्पादों पर दिया जाएगा।WARRANTY उत्पाद से बाहर कोई कॉड प्रदान किया जाएगा।।"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15sp"
+                android:paddingLeft="15sp"
+                android:textStyle="bold"
+                android:text="मुफ्त शिपिंग सभी भारत केवल पूर्ण अग्रिम भुगतान पर"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15sp"
+                android:paddingLeft="15sp"
+                android:text="upto -15000 rs 500\n15k - 30000 rs 1000\n30k - 50000 rs 1500\n50- Above rs 2000"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="5dp"
+            android:text="What if a gadget is booked and customers not being able to come to collect the gadget?"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15sp"
+            android:paddingLeft="15sp"
+            android:text="At Cellway we provide complete security of your payment if you could not able to take the delivery of the gadget in anyhow. Cellway will refund full amount of your payment."
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="5dp"
+            android:text="How and when can I reach coustomers care?"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15sp"
+            android:paddingLeft="15sp"
+            android:text="Our customer support is available at your service from Monday to Sunday from 11:30AM to 9:30PM."
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

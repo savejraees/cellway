@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15sp"
+                android:paddingLeft="15sp"
+                android:text="1. Free Home Delivery For all Prepaid Orders."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+             />
+
+           <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15sp"
+                android:paddingLeft="15sp"
+                android:text="2. For Cash On Delivery Rs. 2000/- advance and Rs. 500/- delivery Charge will be taken extra."
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                />
+
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginRight="15sp"-->
+<!--                android:paddingLeft="15sp"-->
+<!--                android:text="1) SHIPPING CHARGES WILL BE TAKEN FROM CUSTOMERS DEPENDING ON ORDER SIZE."-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15sp" />-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginRight="15sp"-->
+<!--                android:paddingLeft="15sp"-->
+<!--                android:text="2) Rs.2000/- WILL BE TAKEN AS ADVANCE FOR BOOKING ORDER AND THIS AMOUNT WILL NOT BE REFUND IN ANY CASE IF YOU DON'T ACCEPT THE DELIVERY OF COURIER."-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15sp" />-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginRight="15sp"-->
+<!--                android:paddingLeft="15sp"-->
+<!--                android:text="3) CELLWAY GADGETS WILL NOT HEAR ANY EXCSUSE FOR NOT ACCEPTING THE ORDER HENCE NO REFUND WILL BE GIVEN FOR NOT ACCEPTING COD ORDER."-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15sp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginRight="15sp"-->
+<!--                android:paddingLeft="15sp"-->
+<!--                android:text="4) COD SERVICE WILL BE GIVEN ONLY ON WARRANTY PRODUCTS. OUT OF WARRANTY PRODUCT NO COD WILL BE PROVIDED."-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15sp" />-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginRight="15sp"-->
+<!--                android:paddingLeft="15sp"-->
+<!--                android:text="PLEASE READ ALL THIS BEFORE MAKING COD ORDER."-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15sp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginRight="15sp"-->
+<!--                android:paddingLeft="15sp"-->
+<!--                android:text="DELIVERY CHARGES FOR COD ORDER."-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15sp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginRight="15sp"-->
+<!--                android:paddingLeft="15sp"-->
+<!--                android:text="upto -15000 rs 500\n15k - 30000 rs 1000\n30k - 50000 rs 1500\n50- Above rs 2000"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15sp" />-->
+
+
+
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/okTermButton"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_background"
+            android:text="Ok"/>
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

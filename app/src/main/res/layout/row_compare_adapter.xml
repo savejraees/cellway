@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <ImageView
+                android:id="@+id/imgPhone"
+                android:layout_width="50dp"
+                android:layout_height="90dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/samsug_demo" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_close" />
+
+            <TextView
+                android:id="@+id/txtBrand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgPhone"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="15dp"
+                android:textColor="@color/black"
+                android:text="Realme X2 Pro(128GB)"/>
+
+            <TextView
+                android:id="@+id/txtPriceComp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtBrand"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:text="₹ 15999/-"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E6E5E5"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txtDelivery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textSize="16dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:text="Delivery by\n14 Aug, Friday"/>
+
+            <TextView
+                android:id="@+id/txtEmi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textSize="16dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:layout_below="@id/txtDelivery"
+                android:layout_marginTop="5dp"
+                android:text="EMI from ₹992/month"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E6E5E5"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

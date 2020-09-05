@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECEAE9"
+    android:orientation="vertical"
+    tools:context=".fragment.Your_Requirement">
+
+
+                <EditText
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/edt_req_brand"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:singleLine="true"
+                    android:paddingLeft="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:hint="Brand"
+                    android:background="@drawable/roundedittext"
+                    android:maxLength="25"
+                    android:textSize="15sp" />
+
+
+
+                <EditText
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:singleLine="true"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/edt_req_model"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="Model"
+                    android:background="@drawable/roundedittext"
+                    android:paddingLeft="20dp"
+                    android:textSize="15sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_reqSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Submit"
+            android:background="@drawable/button_background"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:indeterminateDrawable="@drawable/progress2"
+        android:id="@+id/progressbarRequire"
+        android:layout_centerInParent="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        ></ProgressBar>
+
+</LinearLayout>
