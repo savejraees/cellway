@@ -24,13 +24,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.ForgetPasswordNewActivity"></activity>
+        <activity android:name=".activity.WorkProgressActivity"></activity>
+        <activity android:name=".activity.PaymentFailActivity" />
+        <activity android:name=".activity.PaymentSuccessActivity"></activity>
+        <activity android:name=".activity.PaymentModeActivity" />
+        <activity android:name=".activity.ForgetPasswordNewActivity" />
         <activity android:name=".activity.BookNewAccessoriesActivity" />
         <activity android:name=".activity.AccesoiesProductActivity" />
         <activity android:name=".activity.AccesoriesSubCategoryActivity" />
         <activity android:name=".activity.AccesorriesActivity" />
         <activity android:name=".activity.CompareActivity" />
-        <activity android:name=".activity.AddressActivity"></activity>
+        <activity android:name=".activity.AddressActivity" />
         <activity android:name=".activity.ProductActivity" />
         <activity android:name=".activity.OrderPlacedActivity" />
         <activity android:name=".activity.RegisterActivityNew" />
@@ -43,9 +47,9 @@
         <activity android:name=".activity.ProductActivityBanner" />
         <activity android:name=".activity.Mobile_DestinationNewActivity" />
         <activity android:name=".activity.BookNewActivity" />
-        <activity android:name=".activity.CartActivity"></activity>
-        <activity android:name=".activity.PaymentActivity"></activity>
-        <activity android:name=".activity.OrderSummaryActivity"></activity>
+        <activity android:name=".activity.CartActivity" />
+        <activity android:name=".activity.CheckoutActivity" />
+        <activity android:name=".activity.OrderSummaryActivity" />
         <activity android:name=".activity.FillAddressActivity" />
         <activity android:name=".activity.Home2" />
         <activity android:name=".NotificationActivity" />
@@ -104,7 +108,6 @@
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -118,6 +121,10 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_K1B2skY2csFOx7" />
     </application>
 
 </manifest>

@@ -108,6 +108,7 @@
                     android:src="@drawable/range_image" />
 
                 <TextView
+                    android:id="@+id/txtMore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/img_above30"
@@ -140,7 +141,7 @@
                 android:paddingRight="15dip"
                 android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="abcd alsks sklaa skljaaaaa skalllll kslaaaaaa kslaaaaa sjlkaa ksljaaaa sakj skjla sakjlsal skal"
+                android:text="Mobile and Accessories Section are Working Only. The Remaining Section are in Under Process. New Update Will Come Soon."
                 android:textColor="#fff"
                 android:textSize="14dp" />
         </LinearLayout>

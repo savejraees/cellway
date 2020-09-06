@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -24,9 +23,7 @@ import com.cellway.Cellway.IApiServices;
 import com.cellway.Cellway.R;
 import com.cellway.Cellway.Services.Api;
 import com.cellway.Cellway.activity.AddressActivity;
-import com.cellway.Cellway.activity.MyOrderActivity;
-import com.cellway.Cellway.activity.OrderSummaryActivity;
-import com.cellway.Cellway.activity.PaymentActivity;
+import com.cellway.Cellway.activity.CheckoutActivity;
 import com.cellway.Cellway.adapter.OrderSummaryAdapter;
 import com.cellway.Cellway.retrofitModel.AddOrderModel;
 import com.cellway.Cellway.retrofitModel.CartModel.CartDetailDatumModel;
@@ -272,8 +269,14 @@ public class DeliveryFragment extends Fragment {
                     AddOrderModel AddressStatusModel = response.body();
                     if (AddressStatusModel.getCode().equals("200")) {
                         sessonManager.setQty("");
-                        startActivity(new Intent(getActivity(), PaymentActivity.class));
-
+                        //startActivity(new Intent(getActivity(), CheckoutActivity.class));
+                        Intent intent = new Intent(getActivity(),CheckoutActivity.class);
+                        if(paymentMode.equals("cod")){
+                            intent.putExtra("amount",bookAmount);
+                        }else {
+                            intent.putExtra("amount",paidAmount);
+                        }
+                        startActivity(intent);
                     } else {
                         Toast.makeText(getActivity(), "" + AddressStatusModel.getMsg(), Toast.LENGTH_SHORT).show();
                     }

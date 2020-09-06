@@ -22,6 +22,7 @@ import com.cellway.Cellway.activity.AddressActivity;
 import com.cellway.Cellway.activity.Mobile_DestinationNewActivity;
 import com.cellway.Cellway.R;
 import com.cellway.Cellway.activity.OrderPlacedActivity;
+import com.cellway.Cellway.activity.WorkProgressActivity;
 import com.cellway.Cellway.adapter.DemandingAdapter;
 import com.cellway.Cellway.adapter.LatestArrival_AdapterNew;
 import com.cellway.Cellway.adapter.Mobile_slide_Adapter;
@@ -58,7 +59,9 @@ public class HomePageNew extends Fragment {
     ImageView banner1,timerBanner,banner2,imgSamsung,imgLenovo;
     Timer swipeTimer;
     private static int currentPage = 0;
-    TextView txtMobile,txtTablet,txtAccess;
+    TextView txtMobile,txtTablet,txtAccess,txtMore;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -68,6 +71,7 @@ public class HomePageNew extends Fragment {
         txtMobile = view.findViewById(R.id.txtMobile);
         txtTablet = view.findViewById(R.id.txtTablet);
         txtAccess = view.findViewById(R.id.txtAccess);
+        txtMore = view.findViewById(R.id.txtMore);
         rvThreeBanner = view.findViewById(R.id.rvThreeBanner);
         rvVerticalBanner = view.findViewById(R.id.rvVerticalBanner);
         rvSwipeBanner = view.findViewById(R.id.rvSwipeBanner);
@@ -106,7 +110,8 @@ public class HomePageNew extends Fragment {
         txtTablet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), OrderPlacedActivity.class));
+               // startActivity(new Intent(getActivity(), OrderPlacedActivity.class));
+            startActivity(new Intent(getActivity(), WorkProgressActivity.class));
             }
         });
 
@@ -114,6 +119,13 @@ public class HomePageNew extends Fragment {
             @Override
             public void onClick(View view) {
               startActivity(new Intent(getActivity(), AccesorriesActivity.class));
+            }
+        });
+        txtMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               // randomAlphaNumeric(10);
+                startActivity(new Intent(getActivity(), WorkProgressActivity.class));
             }
         });
         return view;

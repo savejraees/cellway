@@ -19,7 +19,7 @@ import android.widget.Toast;
 import com.cellway.Cellway.IApiServices;
 import com.cellway.Cellway.R;
 import com.cellway.Cellway.Services.Api;
-import com.cellway.Cellway.activity.PaymentActivity;
+import com.cellway.Cellway.activity.CheckoutActivity;
 import com.cellway.Cellway.adapter.OrderSummaryAdapter;
 import com.cellway.Cellway.retrofitModel.AddOrderModel;
 import com.cellway.Cellway.retrofitModel.CartModel.CartDetailDatumModel;
@@ -136,7 +136,7 @@ public class PickupFragment extends Fragment {
     }
 
     private void hitAddOrderApi() {
-        finalAmont =finalAmont+bookAmount;
+        int finalAmnt =finalAmont+bookAmount;
         sessonManager.showProgress(getActivity());
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
@@ -148,7 +148,7 @@ public class PickupFragment extends Fragment {
                 .build();
         IApiServices api = retrofit.create(IApiServices.class);
         Call<AddOrderModel> call = api.postAddOrder(Api.key, sessonManager.getToken(), sessonManager.getQty(),
-                    ""+finalAmont,txtPickupAddress.getText().toString(),"pickup",
+                    ""+finalAmnt,txtPickupAddress.getText().toString(),"pickup",
                     "pickup",""+bookAmount,"0","0" );
 
 
@@ -161,8 +161,14 @@ public class PickupFragment extends Fragment {
                     AddOrderModel AddressStatusModel = response.body();
                     if (AddressStatusModel.getCode().equals("200")) {
                         sessonManager.setQty("");
-                        startActivity(new Intent(getActivity(), PaymentActivity.class));
+                        Intent intent =new Intent(getActivity(), CheckoutActivity.class);
 
+                        if(txtBookingAmountPickup.getText().toString().equals("- ₹ 0")){
+                            intent.putExtra("amount",pricePickup);
+                        }else{
+                            intent.putExtra("amount",bookAmount);
+                        }
+                        startActivity(intent);
                     } else {
                         Toast.makeText(getActivity(), "" + AddressStatusModel.getMsg(), Toast.LENGTH_SHORT).show();
                     }

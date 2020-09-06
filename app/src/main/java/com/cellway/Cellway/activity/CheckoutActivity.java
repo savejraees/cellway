@@ -1,11 +1,9 @@
 package com.cellway.Cellway.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -31,36 +29,60 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class PaymentActivity extends BaseActivity implements PaymentFormAdapter.PaymentClick{
+public class CheckoutActivity extends BaseActivity implements PaymentFormAdapter.PaymentClick{
 
     RecyclerView rvPayment;
     SessonManager sessonManager;
     Button btnPay;
     int id=-1;
+    private static final String ALPHA_NUMERIC_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    static String OrderId;
     ArrayList<PaymentFormStatusModel.Datum> list = new ArrayList<>();
+    int amount;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment);
+        setContentView(R.layout.activity_checkout);
         rvPayment = findViewById(R.id.rvPayment);
         btnPay = findViewById(R.id.btnPay);
-        sessonManager = new SessonManager(PaymentActivity.this);
+        sessonManager = new SessonManager(CheckoutActivity.this);
+        if(getIntent().hasExtra("amount")){
+            amount = getIntent().getIntExtra("amount",0);
+        }
         hitApi();
+
+//////////// for genrate random string ///////////
+        randomAlphaNumeric(10);
 
         btnPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(id==-1){
-                    Toast.makeText(PaymentActivity.this, "Please Select Payment Method", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CheckoutActivity.this, "Please Select Payment Method", Toast.LENGTH_SHORT).show();
                 }else {
-                    Toast.makeText(PaymentActivity.this, "Done", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(PaymentActivity.this, "Done", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(CheckoutActivity.this,PaymentModeActivity.class)
+                  .putExtra("id",OrderId)
+                  .putExtra("amount",amount));
                 }
             }
         });
     }
 
+    // Java program generate a random AlphaNumeric String
+   // using Math.random() method
+    public static String randomAlphaNumeric(int count) {
+        StringBuilder builder = new StringBuilder();
+        while (count-- != 0) {
+            int character = (int)(Math.random()*ALPHA_NUMERIC_STRING.length());
+            builder.append(ALPHA_NUMERIC_STRING.charAt(character));
+        }
+        OrderId = builder.toString();
+        return builder.toString();
+    }
+
     private void hitApi() {
-        sessonManager.showProgress(PaymentActivity.this);
+        sessonManager.showProgress(CheckoutActivity.this);
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(Url.BASE_URL)
@@ -83,7 +105,7 @@ public class PaymentActivity extends BaseActivity implements PaymentFormAdapter.
                         list = StatusModel.getData();
                         setRVCart();
                     } else {
-                        Toast.makeText(PaymentActivity.this, "" + StatusModel.getMsg(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CheckoutActivity.this, "" + StatusModel.getMsg(), Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -91,15 +113,15 @@ public class PaymentActivity extends BaseActivity implements PaymentFormAdapter.
             @Override
             public void onFailure(Call<PaymentFormStatusModel> call, Throwable t) {
                 sessonManager.hideProgress();
-                Toast.makeText(PaymentActivity.this, "" + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(CheckoutActivity.this, "" + t.getMessage(), Toast.LENGTH_SHORT).show();
                 Log.d("slkklsaksax", "" + t.getMessage());
             }
         });
     }
 
     private void setRVCart() {
-        rvPayment.setLayoutManager(new GridLayoutManager(PaymentActivity.this,2));
-        rvPayment.setAdapter(new PaymentFormAdapter(PaymentActivity.this,list,this));
+        rvPayment.setLayoutManager(new GridLayoutManager(CheckoutActivity.this,2));
+        rvPayment.setAdapter(new PaymentFormAdapter(CheckoutActivity.this,list,this));
     }
 
     @Override
@@ -115,7 +137,7 @@ public class PaymentActivity extends BaseActivity implements PaymentFormAdapter.
     @Override
     public void onBackPressed() {
         Toast.makeText(this, "Order Cancel", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(PaymentActivity.this, Home.class));
+        startActivity(new Intent(CheckoutActivity.this, Home.class));
         finishAffinity();
     }
 }
