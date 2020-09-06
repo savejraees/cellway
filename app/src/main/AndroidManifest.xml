@@ -125,6 +125,10 @@
         <meta-data
             android:name="com.razorpay.ApiKey"
             android:value="rzp_test_K1B2skY2csFOx7" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2957063050547520~9759537079"/>
     </application>
 
 </manifest>
