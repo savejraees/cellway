@@ -86,7 +86,7 @@ public class AddressActivity extends BaseActivity implements AddressAdapter.OnNu
                     SetAddressModel AddressStatusModel = response.body();
                     if (AddressStatusModel.getCode().equals("200")) {
                         Toast.makeText(AddressActivity.this, "" + AddressStatusModel.getMsg(), Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(AddressActivity.this, OrderSummaryActivity.class));
+                        startActivity(new Intent(AddressActivity.this, CartActivity.class));
 
                     } else {
                         Toast.makeText(AddressActivity.this, "" + AddressStatusModel.getMsg(), Toast.LENGTH_SHORT).show();

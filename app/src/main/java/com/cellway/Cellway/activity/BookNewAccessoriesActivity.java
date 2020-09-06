@@ -509,7 +509,7 @@ public class BookNewAccessoriesActivity extends BaseActivity {
             View myImageLayout = inflater.inflate(R.layout.slide_image, view, false);
             ImageView myImage = (ImageView) myImageLayout.findViewById(R.id.custom_image);
             //  Picasso.with(context).load(images.get(position).getBannerImage()).into(myImage);
-            Picasso.get().load(images.get(position).getProductImg()).placeholder(R.drawable.blue1).into(myImage);
+            Picasso.get().load(images.get(position).getProductImg()).placeholder(R.drawable.app_logo).into(myImage);
             view.addView(myImageLayout, 0);
             return myImageLayout;
         }
