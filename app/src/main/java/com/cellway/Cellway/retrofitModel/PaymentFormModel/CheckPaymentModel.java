@@ -1,26 +1,18 @@
-package com.cellway.Cellway.retrofitModel;
+package com.cellway.Cellway.retrofitModel.PaymentFormModel;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class AddOrderModel {
+public class CheckPaymentModel {
     @SerializedName("msg")
     @Expose
     private String msg;
+    @SerializedName("affected")
+    @Expose
+    private Integer affected;
     @SerializedName("code")
     @Expose
     private String code;
-    @SerializedName("order_id")
-    @Expose
-    private String orderId;
-
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
 
     public String getMsg() {
         return msg;
@@ -28,6 +20,14 @@ public class AddOrderModel {
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public Integer getAffected() {
+        return affected;
+    }
+
+    public void setAffected(Integer affected) {
+        this.affected = affected;
     }
 
     public String getCode() {

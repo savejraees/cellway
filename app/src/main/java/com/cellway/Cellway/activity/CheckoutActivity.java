@@ -36,7 +36,7 @@ public class CheckoutActivity extends BaseActivity implements PaymentFormAdapter
     Button btnPay;
     int id=-1;
     private static final String ALPHA_NUMERIC_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    static String OrderId;
+     String OrderId;
     ArrayList<PaymentFormStatusModel.Datum> list = new ArrayList<>();
     int amount;
     @Override
@@ -48,11 +48,12 @@ public class CheckoutActivity extends BaseActivity implements PaymentFormAdapter
         sessonManager = new SessonManager(CheckoutActivity.this);
         if(getIntent().hasExtra("amount")){
             amount = getIntent().getIntExtra("amount",0);
+            OrderId =  getIntent().getStringExtra("orderId");
         }
         hitApi();
 
 //////////// for genrate random string ///////////
-        randomAlphaNumeric(10);
+       // randomAlphaNumeric(10);
 
         btnPay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,15 +72,15 @@ public class CheckoutActivity extends BaseActivity implements PaymentFormAdapter
 
     // Java program generate a random AlphaNumeric String
    // using Math.random() method
-    public static String randomAlphaNumeric(int count) {
-        StringBuilder builder = new StringBuilder();
-        while (count-- != 0) {
-            int character = (int)(Math.random()*ALPHA_NUMERIC_STRING.length());
-            builder.append(ALPHA_NUMERIC_STRING.charAt(character));
-        }
-        OrderId = builder.toString();
-        return builder.toString();
-    }
+//    public static String randomAlphaNumeric(int count) {
+//        StringBuilder builder = new StringBuilder();
+//        while (count-- != 0) {
+//            int character = (int)(Math.random()*ALPHA_NUMERIC_STRING.length());
+//            builder.append(ALPHA_NUMERIC_STRING.charAt(character));
+//        }
+//        OrderId = builder.toString();
+//        return builder.toString();
+//    }
 
     private void hitApi() {
         sessonManager.showProgress(CheckoutActivity.this);
@@ -136,8 +137,6 @@ public class CheckoutActivity extends BaseActivity implements PaymentFormAdapter
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "Order Cancel", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(CheckoutActivity.this, Home.class));
-        finishAffinity();
+       super.onBackPressed();
     }
 }

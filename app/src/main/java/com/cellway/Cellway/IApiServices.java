@@ -24,6 +24,7 @@ import com.cellway.Cellway.retrofitModel.LoginRegisterModel.RegisterStatusModel;
 import com.cellway.Cellway.retrofitModel.LoginRegisterModel.VerifyOtpModel;
 import com.cellway.Cellway.retrofitModel.PasswordModel.ForgetPasswordModel;
 import com.cellway.Cellway.retrofitModel.PasswordModel.PasswordNewModel;
+import com.cellway.Cellway.retrofitModel.PaymentFormModel.CheckPaymentModel;
 import com.cellway.Cellway.retrofitModel.PaymentFormModel.PaymentFormStatusModel;
 import com.cellway.Cellway.retrofitModel.ProductCategoryModel.ProductCategoryStatusModel;
 import com.cellway.Cellway.retrofitModel.ProductModel.ProductStatusModel;
@@ -175,6 +176,10 @@ public interface IApiServices {
     @FormUrlEncoded
     @POST("setdelivery_address")
     Call<SetAddressModel> postSetDeliveryAddress(@Field("key") String key, @Field("address_id") int address_id, @Field("userid") String userid);
+
+    @FormUrlEncoded
+    @POST("check_payment")
+    Call<CheckPaymentModel> postCheckPayment(@Field("key") String key, @Field("userid") String userid, @Field("order_id") String order_id);
 
     @FormUrlEncoded
     @POST("addorder")

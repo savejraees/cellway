@@ -8,13 +8,25 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.cellway.Cellway.IApiServices;
 import com.cellway.Cellway.R;
+import com.cellway.Cellway.Services.Api;
+import com.cellway.Cellway.retrofitModel.PaymentFormModel.CheckPaymentModel;
 import com.cellway.Cellway.util.SessonManager;
+import com.cellway.Cellway.util.Url;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentData;
 import com.razorpay.PaymentResultWithDataListener;
 
 import org.json.JSONObject;
+
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class PaymentModeActivity extends AppCompatActivity implements PaymentResultWithDataListener {
 
@@ -51,10 +63,10 @@ public class PaymentModeActivity extends AppCompatActivity implements PaymentRes
             JSONObject options = new JSONObject();
             /**      * Merchant Name      * eg: ACME Corp || HasGeek etc.      */
 
-            options.put("name", "Nitve");
+            options.put("name", "Cellway");
             /**      * Description can be anything      * eg: Reference No. #123123 - This order number is passed by you for your internal reference. This is not the `razorpay_order_id`.      *     Invoice Payment      *     etc.      */
             options.put("description", "");
-            options.put("order_id","");
+          //  options.put("order_id",""+orderId);
             options.put("currency", "INR");      /**      * Amount is always passed in currency subunits      * Eg: "500" = INR 5.00      */
             //   options.put("amount", TotalPrice);
             options.put("amount", ""+amount*100);
@@ -77,15 +89,53 @@ public class PaymentModeActivity extends AppCompatActivity implements PaymentRes
             String signature = paymentData.getSignature();
             String orderId = paymentData.getOrderId();
 
-//            PaymentSuccessAPI(paymentId, signature, orderId);
+            PaymentSuccessAPI();
             Log.d("dasdwqpo", s + "  " + paymentId + " " + signature + " " + orderId);
-
-            startActivity(new Intent(PaymentModeActivity.this,PaymentSuccessActivity.class));
-            finishAffinity();
 
         } catch (Exception e) {
             Log.e(TAG, "Exception in onPaymentSuccess", e);
         }
+    }
+
+    private void PaymentSuccessAPI() {
+        sessonManager.showProgress(PaymentModeActivity.this);
+        Retrofit retrofit = new Retrofit.Builder()
+                .addConverterFactory(GsonConverterFactory.create())
+                .baseUrl(Url.BASE_URL)
+                .client(new OkHttpClient.Builder().addInterceptor(new HttpLoggingInterceptor().setLevel(
+                        HttpLoggingInterceptor.Level.BODY
+                ))
+                        .build())
+                .build();
+        IApiServices api = retrofit.create(IApiServices.class);
+       
+            Call<CheckPaymentModel> call = api.postCheckPayment(Api.key, sessonManager.getToken(), orderId);
+        
+
+        call.enqueue(new Callback<CheckPaymentModel>() {
+            @Override
+            public void onResponse(Call<CheckPaymentModel> call, Response<CheckPaymentModel> response) {
+
+                if (response.isSuccessful()) {
+                    sessonManager.hideProgress();
+                    CheckPaymentModel AddressStatusModel = response.body();
+                    if (AddressStatusModel.getCode().equals("200")) {
+                        sessonManager.setQty("");
+                        startActivity(new Intent(PaymentModeActivity.this,PaymentSuccessActivity.class));
+                        finishAffinity();
+
+                    } else {
+                        Toast.makeText(PaymentModeActivity.this, "" + AddressStatusModel.getMsg(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CheckPaymentModel> call, Throwable t) {
+                sessonManager.hideProgress();
+                Toast.makeText(PaymentModeActivity.this, "" + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

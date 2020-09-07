@@ -168,6 +168,7 @@ public class PickupFragment extends Fragment {
                         }else{
                             intent.putExtra("amount",bookAmount);
                         }
+                        intent.putExtra("orderId",AddressStatusModel.getOrderId());
                         startActivity(intent);
                     } else {
                         Toast.makeText(getActivity(), "" + AddressStatusModel.getMsg(), Toast.LENGTH_SHORT).show();

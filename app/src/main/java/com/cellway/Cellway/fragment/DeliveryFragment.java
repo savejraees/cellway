@@ -268,7 +268,7 @@ public class DeliveryFragment extends Fragment {
                     sessonManager.hideProgress();
                     AddOrderModel AddressStatusModel = response.body();
                     if (AddressStatusModel.getCode().equals("200")) {
-                        sessonManager.setQty("");
+                      //  sessonManager.setQty("");
                         //startActivity(new Intent(getActivity(), CheckoutActivity.class));
                         Intent intent = new Intent(getActivity(),CheckoutActivity.class);
                         if(paymentMode.equals("cod")){
@@ -276,6 +276,7 @@ public class DeliveryFragment extends Fragment {
                         }else {
                             intent.putExtra("amount",paidAmount);
                         }
+                        intent.putExtra("orderId",AddressStatusModel.getOrderId());
                         startActivity(intent);
                     } else {
                         Toast.makeText(getActivity(), "" + AddressStatusModel.getMsg(), Toast.LENGTH_SHORT).show();
