@@ -118,7 +118,8 @@ public class HomePageNew extends Fragment {
         txtAccess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              startActivity(new Intent(getActivity(), AccesorriesActivity.class));
+                startActivity(new Intent(getActivity(), WorkProgressActivity.class));
+             // startActivity(new Intent(getActivity(), AccesorriesActivity.class));
             }
         });
         txtMore.setOnClickListener(new View.OnClickListener() {

@@ -39,6 +39,7 @@ public class CartActivity extends BaseActivity {
 
     static public CardView cardMissinig;
 
+    String intent="";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -49,6 +50,9 @@ public class CartActivity extends BaseActivity {
         txtPlaceOrder = findViewById(R.id.txtPlaceOrder);
         cardMissinig = findViewById(R.id.cardMissinig);
         finalAmountCart = findViewById(R.id.finalAmountCart);
+        if(getIntent().hasExtra("Intent")){
+            intent = getIntent().getStringExtra("Intent");
+        }
 
         hitCartDetailApi();
         txtPlaceOrder.setOnClickListener(new View.OnClickListener() {
@@ -111,34 +115,13 @@ public class CartActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-//        if (sessonManager.getAddressIntent().equals("phoneDetail")) {
-//            sessonManager.setAddressIntent("");
-//            startActivity(new Intent(CartActivity.this, BookNewActivity.class)
-//                    .putExtra("id", sessonManager.getProductIdBook()));
-//            sessonManager.setProductIdBook("");
-//            finishAffinity();
-//        } else if (sessonManager.getAddressIntent().equals("accessories")) {
-//            sessonManager.setAddressIntent("");
-//            startActivity(new Intent(CartActivity.this, BookNewAccessoriesActivity.class)
-//                    .putExtra("id", sessonManager.getProductIdBook()));
-//            sessonManager.setProductIdBook("");
-//            finishAffinity();
-//        }
-//        else if (sessonManager.getAddressIntent().equals("buyPhone")) {
-//            sessonManager.setAddressIntent("");
-//            startActivity(new Intent(CartActivity.this, BookNewActivity.class)
-//                    .putExtra("id", sessonManager.getProductIdBook()));
-//            finishAffinity();
-//
-//        }  else if (sessonManager.getAddressIntent().equals("buyAccessories")) {
-//            sessonManager.setAddressIntent("");
-//            startActivity(new Intent(CartActivity.this, BookNewAccessoriesActivity.class)
-//                    .putExtra("id", sessonManager.getProductIdBook()));
-//            finishAffinity();
-//
-//        }
-//        else {
+
+        if(intent.equals("BookMob")){
+            startActivity(new Intent(CartActivity.this,BookNewActivity.class)
+            .putExtra("id",sessonManager.getProductIdBook()));
+        }else {
             super.onBackPressed();
-//        }
+        }
+
     }
 }

@@ -145,15 +145,17 @@ public class BookNewActivity extends BaseActivity implements BotomSheetDialogFra
 
     }
 
+
     @Override
     protected void onRestart() {
         super.onRestart();
-        if ((!sessonManager.getQty().isEmpty()&&!sessonManager.getToken().isEmpty())) {
-            txtCartBook.setVisibility(View.VISIBLE);
-            txtCartBook.setText(sessonManager.getQty());
-        }else {
-            txtCartBook.setVisibility(View.GONE);
-        }
+//        if ((!sessonManager.getQty().isEmpty()&&!sessonManager.getToken().isEmpty())) {
+//            txtCartBook.setVisibility(View.VISIBLE);
+//            txtCartBook.setText(sessonManager.getQty());
+//        }else {
+//            txtCartBook.setVisibility(View.GONE);
+//        }
+        hitApi(sessonManager.getProductIdBook());
 
     }
     private void hitApi(String id) {
@@ -243,7 +245,8 @@ public class BookNewActivity extends BaseActivity implements BotomSheetDialogFra
             public void onClick(View view) {
                 sessonManager.setAddressIntent("buyPhone");
                 sessonManager.setProductIdBook(prod_ID);
-                startActivity(new Intent(BookNewActivity.this, CartActivity.class));
+                startActivity(new Intent(BookNewActivity.this, CartActivity.class)
+                .putExtra("Intent","BookMob"));
             }
         });
         img7DaysReplace.setOnClickListener(new View.OnClickListener() {
@@ -314,7 +317,9 @@ public class BookNewActivity extends BaseActivity implements BotomSheetDialogFra
                             Toast.makeText(BookNewActivity.this, "Please Verify the Pincode", Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        startActivity(new Intent(BookNewActivity.this,CartActivity.class));
+                             sessonManager.setProductIdBook(prod_ID);
+                              startActivity(new Intent(BookNewActivity.this,CartActivity.class)
+                                .putExtra("Intent","BookMob"));
                     }
 
             }

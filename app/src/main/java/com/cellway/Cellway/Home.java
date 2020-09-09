@@ -21,6 +21,7 @@ import com.android.volley.toolbox.Volley;
 import com.cellway.Cellway.Services.Api;
 import com.cellway.Cellway.activity.BaseActivity;
 import com.cellway.Cellway.activity.CartActivity;
+import com.cellway.Cellway.activity.MyOrderActivity;
 import com.cellway.Cellway.fragment.About_us;
 import com.cellway.Cellway.fragment.Contact_us;
 import com.cellway.Cellway.fragment.HomePage;
@@ -397,12 +398,14 @@ public class Home extends BaseActivity
 
         else if (id == R.id.nav_myOrder) {
 
-            MyOrder fragment = new MyOrder();
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.frame, fragment);
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
+//            MyOrder fragment = new MyOrder();
+//            FragmentManager fragmentManager = getSupportFragmentManager();
+//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//            fragmentTransaction.replace(R.id.frame, fragment);
+//            fragmentTransaction.addToBackStack(null);
+//            fragmentTransaction.commit();
+
+            startActivity(new Intent(Home.this, MyOrderActivity.class));
 
         }
 
@@ -447,6 +450,7 @@ public class Home extends BaseActivity
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         }
+
 
         else if (id == R.id.nav_Logout) {
 
