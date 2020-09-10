@@ -73,6 +73,12 @@ public interface IApiServices {
                                                 @Field("warrenty_search") String warrenty_search, @Field("orderby") String orderby);
 
     @FormUrlEncoded
+    @POST("getproductlist_by_brand")
+    Call<ProductCategoryStatusModel> getProductByBrand(@Field("key") String key, @Field("page") String page, @Field("category") String category,
+                                                @Field("brand_id") String brand_id, @Field("series_search") String series_search,
+                                                @Field("warrenty_search") String warrenty_search, @Field("orderby") String orderby);
+
+    @FormUrlEncoded
     @POST("getphone_details")
     Call<BookingStatusModel> getBookingDetail(@Field("key") String key, @Field("phone_id") String phone_id, @Field("userid") String UserId);
 

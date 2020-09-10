@@ -25,12 +25,9 @@ import android.widget.TextView;
 import com.cellway.Cellway.R;
 import com.cellway.Cellway.Services.Api;
 import com.cellway.Cellway.adapter.ProductCateogoryAdapter;
-import com.cellway.Cellway.adapter.Product_NewAdapter;
 import com.cellway.Cellway.retrofitModel.ProductCategoryModel.ProductCategoryDatumModel;
 import com.cellway.Cellway.retrofitModel.ProductCategoryModel.ProductCategorySeriesModel;
 import com.cellway.Cellway.retrofitModel.ProductCategoryModel.ProductCategoryStatusModel;
-import com.cellway.Cellway.retrofitModel.ProductModel.ProductBrandModel;
-import com.cellway.Cellway.retrofitModel.ProductModel.ProductDatumModel;
 
 import java.util.ArrayList;
 
@@ -39,11 +36,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 @RequiresApi(api = Build.VERSION_CODES.M)
-public class ProductActivity extends BaseActivity implements RecyclerView.OnScrollChangeListener {
-
+public class ProductActivityBrand extends BaseActivity implements RecyclerView.OnScrollChangeListener{
     RecyclerView rvYourMobileDest,rvSeries;
     ImageView imgBackProduct;
-    String type,id,nameHeader,orderBy="lth";
+    String type="",id,nameHeader,orderBy="lth";
     int currentPage = 1;
     int totalPage;
     ArrayList<ProductCategoryDatumModel> listDataBanner = new ArrayList<>();
@@ -53,26 +49,26 @@ public class ProductActivity extends BaseActivity implements RecyclerView.OnScro
     Call<ProductCategoryStatusModel> call;
     ProductCateogoryAdapter adapter;
     TextView txtProductHeader;
-    RelativeLayout relSort,relWarranty,relSeries;
-    LinearLayout linearSeries,linearWarranty,layoutPrice;
+    RelativeLayout relSort,relWarranty,relSeries,relCategory;
+    LinearLayout linearSeries,linearWarranty,layoutPrice,layoutCategory;
     RadioGroup radioPrice;
     TextView txtWarrantyIN,txtWarrantyOut,txtSeriesApply;
-    ImageView imgSeriesUp,imgWarrantyUp,imgPriceUp;
+    ImageView imgSeriesUp,imgWarrantyUp,imgPriceUp,imgCatUp;
     String warranty = "",seriesId="";
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_product);
+        setContentView(R.layout.activity_product_brand);
         init();
-        type = getIntent().getStringExtra("type");
         id = getIntent().getStringExtra("id");
-        
+
         hitApiProduct();
         onClick();
 
         rvYourMobileDest.setOnScrollChangeListener(this);
-        rvYourMobileDest.setLayoutManager(new GridLayoutManager(ProductActivity.this, 1));
-        adapter = new ProductCateogoryAdapter(ProductActivity.this, listDataBanner2,type,id);
+        rvYourMobileDest.setLayoutManager(new GridLayoutManager(ProductActivityBrand.this, 1));
+        adapter = new ProductCateogoryAdapter(ProductActivityBrand.this, listDataBanner2,type,id);
         rvYourMobileDest.setAdapter(adapter);
 
         imgBackProduct.setOnClickListener(new View.OnClickListener() {
@@ -81,9 +77,31 @@ public class ProductActivity extends BaseActivity implements RecyclerView.OnScro
                 onBackPressed();
             }
         });
-
     }
 
+    private void init() {
+        rvYourMobileDest = findViewById(R.id.rvYourMobileDestPB);
+        rvSeries = findViewById(R.id.rvSeriesPB);
+        imgBackProduct = findViewById(R.id.imgBackProductPB);
+        txtProductHeader = findViewById(R.id.txtProductHeaderPB);
+        relSeries = findViewById(R.id.relSeriesPB);
+        relCategory = findViewById(R.id.relCategoryPB);
+        relWarranty = findViewById(R.id.relWarrantyPB);
+        relSort = findViewById(R.id.relSortPB);
+        linearSeries = findViewById(R.id.linearSeriesPB);
+        linearWarranty = findViewById(R.id.linearWarrantyPB);
+        layoutPrice = findViewById(R.id.layoutPricePB);
+        layoutCategory = findViewById(R.id.layoutCategoryPB);
+        radioPrice = findViewById(R.id.radioPricePB);
+        txtWarrantyIN = findViewById(R.id.txtWarrantyINPB);
+        txtWarrantyOut = findViewById(R.id.txtWarrantyOutPB);
+        txtSeriesApply = findViewById(R.id.txtSeriesApplyPB);
+        imgPriceUp = findViewById(R.id.imgPriceUpPB);
+        imgCatUp = findViewById(R.id.imgCatUpPB);
+        imgWarrantyUp = findViewById(R.id.imgWarrantyUpPB);
+        imgSeriesUp = findViewById(R.id.imgSeriesUpPB);
+
+    }
     private void onClick() {
         relSeries.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,6 +121,7 @@ public class ProductActivity extends BaseActivity implements RecyclerView.OnScro
                 }
                 linearWarranty.setVisibility(View.GONE);
                 layoutPrice.setVisibility(View.GONE);
+                layoutCategory.setVisibility(View.GONE);
             }
         });
         relWarranty.setOnClickListener(new View.OnClickListener() {
@@ -122,6 +141,7 @@ public class ProductActivity extends BaseActivity implements RecyclerView.OnScro
 
                 linearSeries.setVisibility(View.GONE);
                 layoutPrice.setVisibility(View.GONE);
+                layoutCategory.setVisibility(View.GONE);
             }
         });
 
@@ -143,8 +163,32 @@ public class ProductActivity extends BaseActivity implements RecyclerView.OnScro
 
                 linearSeries.setVisibility(View.GONE);
                 linearWarranty.setVisibility(View.GONE);
+                layoutCategory.setVisibility(View.GONE);
             }
         });
+
+        relCategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(layoutCategory.getVisibility()==View.VISIBLE){
+                    layoutCategory.setVisibility(View.GONE);
+                    imgCatUp.setImageResource(R.drawable.arrow_drop_down);
+                    rvYourMobileDest.setVisibility(View.VISIBLE);
+
+                }else {
+                    layoutCategory.setVisibility(View.VISIBLE);
+                    imgCatUp.setImageResource(R.drawable.arrow_drop_up);
+                    imgSeriesUp.setImageResource(R.drawable.arrow_drop_down);
+                    imgPriceUp.setImageResource(R.drawable.arrow_drop_down);
+                    rvYourMobileDest.setVisibility(View.GONE);
+                }
+                linearSeries.setVisibility(View.GONE);
+                layoutPrice.setVisibility(View.GONE);
+                linearWarranty.setVisibility(View.GONE);
+            }
+        });
+
 
         txtSeriesApply.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -234,34 +278,30 @@ public class ProductActivity extends BaseActivity implements RecyclerView.OnScro
 
     }
 
-
-    private void init() {
-        rvYourMobileDest = findViewById(R.id.rvYourMobileDest);
-        rvSeries = findViewById(R.id.rvSeries);
-        imgBackProduct = findViewById(R.id.imgBackProduct);
-        txtProductHeader = findViewById(R.id.txtProductHeader);
-        relSeries = findViewById(R.id.relSeries);
-        relWarranty = findViewById(R.id.relWarranty);
-        relSort = findViewById(R.id.relSort);
-        linearSeries = findViewById(R.id.linearSeries);
-        linearWarranty = findViewById(R.id.linearWarranty);
-        layoutPrice = findViewById(R.id.layoutPrice);
-        radioPrice = findViewById(R.id.radioPrice);
-        txtWarrantyIN = findViewById(R.id.txtWarrantyIN);
-        txtWarrantyOut = findViewById(R.id.txtWarrantyOut);
-        txtSeriesApply = findViewById(R.id.txtSeriesApply);
-        imgPriceUp = findViewById(R.id.imgPriceUp);
-        imgWarrantyUp = findViewById(R.id.imgWarrantyUp);
-        imgSeriesUp = findViewById(R.id.imgSeriesUp);
-
+    private boolean isLastItemDisplaying(RecyclerView recyclerView) {
+        if (recyclerView.getAdapter().getItemCount() != 0) {
+            int lastVisibleItemPosition = ((LinearLayoutManager) recyclerView.getLayoutManager()).findLastCompletelyVisibleItemPosition();
+            if (lastVisibleItemPosition != RecyclerView.NO_POSITION && lastVisibleItemPosition == recyclerView.getAdapter().getItemCount() - 1)
+                return true;
+        }
+        return false;
     }
 
+    @Override
+    public void onScrollChange(View view, int i, int i1, int i2, int i3) {
+        if (isLastItemDisplaying(rvYourMobileDest)) {
+            if (currentPage <= totalPage && listDataBanner2.size() > 1) {
+                hitApiProduct();
+
+            }
+        }
+    }
     private void hitApiProduct() {
-        showProgress(ProductActivity.this);
+        showProgress(ProductActivityBrand.this);
         listDataBanner.clear();
 
-         Log.d("adlskjop",orderBy);
-         call = api.getProduct(Api.key, String.valueOf(currentPage), type,id,seriesId,warranty,orderBy);
+        Log.d("adlskjop",orderBy);
+        call = api.getProductByBrand(Api.key, String.valueOf(currentPage), type,id,seriesId,warranty,orderBy);
 
         call.enqueue(new Callback<ProductCategoryStatusModel>() {
             @Override
@@ -275,8 +315,8 @@ public class ProductActivity extends BaseActivity implements RecyclerView.OnScro
 
                     if(listSeries.size()==0){
                         listSeries = model.getSeries();
-                        rvSeries.setLayoutManager(new GridLayoutManager(ProductActivity.this,3));
-                        rvSeries.setAdapter(new SeriesAdapter(ProductActivity.this,listSeries));
+                        rvSeries.setLayoutManager(new GridLayoutManager(ProductActivityBrand.this,3));
+                        rvSeries.setAdapter(new SeriesAdapter(ProductActivityBrand.this,listSeries));
                     }
 
                     listDataBanner = model.getData();
@@ -296,25 +336,6 @@ public class ProductActivity extends BaseActivity implements RecyclerView.OnScro
                 showToast(t.getMessage());
             }
         });
-    }
-
-    private boolean isLastItemDisplaying(RecyclerView recyclerView) {
-        if (recyclerView.getAdapter().getItemCount() != 0) {
-            int lastVisibleItemPosition = ((LinearLayoutManager) recyclerView.getLayoutManager()).findLastCompletelyVisibleItemPosition();
-            if (lastVisibleItemPosition != RecyclerView.NO_POSITION && lastVisibleItemPosition == recyclerView.getAdapter().getItemCount() - 1)
-                return true;
-        }
-        return false;
-    }
-
-    @Override
-    public void onScrollChange(View view, int i, int i1, int i2, int i3) {
-        if (isLastItemDisplaying(rvYourMobileDest)) {
-            if (currentPage <= totalPage && listDataBanner2.size() > 1) {
-                hitApiProduct();
-
-            }
-        }
     }
 
 
@@ -383,7 +404,8 @@ public class ProductActivity extends BaseActivity implements RecyclerView.OnScro
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(ProductActivity.this,BrandListActivity.class));
+        startActivity(new Intent(ProductActivityBrand.this,Mobile_DestinationNewActivity.class));
         finishAffinity();
     }
+
 }

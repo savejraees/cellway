@@ -24,9 +24,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.WorkProgressActivity"></activity>
+        <activity android:name=".activity.ProductActivityBrand"></activity>
+        <activity android:name=".activity.WorkProgressActivity" />
         <activity android:name=".activity.PaymentFailActivity" />
-        <activity android:name=".activity.PaymentSuccessActivity"></activity>
+        <activity android:name=".activity.PaymentSuccessActivity" />
         <activity android:name=".activity.PaymentModeActivity" />
         <activity android:name=".activity.ForgetPasswordNewActivity" />
         <activity android:name=".activity.BookNewAccessoriesActivity" />
@@ -108,6 +109,7 @@
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -125,10 +127,9 @@
         <meta-data
             android:name="com.razorpay.ApiKey"
             android:value="rzp_test_K1B2skY2csFOx7" />
-
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-2957063050547520~9759537079"/>
+            android:value="ca-app-pub-2957063050547520~9759537079" />
     </application>
 
 </manifest>

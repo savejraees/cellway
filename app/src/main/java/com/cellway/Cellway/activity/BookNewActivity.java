@@ -64,20 +64,23 @@ public class BookNewActivity extends BaseActivity implements BotomSheetDialogFra
     RecyclerView rvAvailble, rvPayment;
     LinearLayout linearAdd;
     ImageView imgCheck, imgBackBooking, img7DaysReplace, imgFreeDelivery;
-    Button btnBuyNow, btnAddCart, btnPinCode;
+    Button btnBuyNow, btnPinCode;
+    static public Button btnAddCart;
     TextView txtKnowMore, txtBrandModel, txtPrice, txtRamRoM, txtDisplayBook, txtRear, txtFront, txtBattery, txtWarranty, txtPinCode, txtAvailOffer;
     Dialog dialog7Days, dialogCashOnDelivry;
-    TextView txt7DaysOk, txtFreeDelivry, txtProcessorBook, txtWarrantyMOnthBok, txtCartBook;
+    TextView txt7DaysOk, txtFreeDelivry, txtProcessorBook, txtWarrantyMOnthBok;
     EditText edtPin;
+    static public TextView txtCartBook;
     ImageView img1;
     CardView cardProtection;
-    int backCoverPrice, temperedPrice, protectionPrice;
+   static public int backCoverPrice, temperedPrice, protectionPrice;
     String BrandName, ModelName;
     private ShimmerFrameLayout mShimmerViewContainer;
     NestedScrollView nestedBookNew;
     String prod_ID;
 
     int quantity = 0;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -277,23 +280,26 @@ public class BookNewActivity extends BaseActivity implements BotomSheetDialogFra
             @Override
             public void onClick(View view) {
                 if (txtPinCode.getText().toString().equals("Delivery Available")) {
+                    if(!btnAddCart.getText().toString().equalsIgnoreCase("GO TO CART")){
                         if (backCoverPrice == 0 && temperedPrice == 0) {
-                            if (btnAddCart.getText().toString().equalsIgnoreCase("GO TO CART")) {
-                                startActivity(new Intent(BookNewActivity.this, AddressActivity.class));
-                            }else {
-                                hitAddCartBuyApi();
-                            }
+                            hitAddCartBuyApi();
 
                         } else {
                             BotomSheetDialogFragmnt bottomSheet = new BotomSheetDialogFragmnt();
                             Bundle bundle = new Bundle();
-                            bundle.putInt("back", backCoverPrice);
-                            bundle.putInt("temperd", temperedPrice);
+//                            bundle.putInt("back", backCoverPrice);
+//                            bundle.putInt("temperd", temperedPrice);
+                            bundle.putInt("protectionPrice", protectionPrice);
                             bundle.putString("brand", BrandName);
                             bundle.putString("model", ModelName);
+                            bundle.putString("prod_ID", prod_ID);
                             bottomSheet.setArguments(bundle);
                             bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
                         }
+                    }else {
+                        startActivity(new Intent(BookNewActivity.this, AddressActivity.class));
+                    }
+
 
                 } else {
                     Toast.makeText(BookNewActivity.this, "Please Verify the Pincode", Toast.LENGTH_SHORT).show();
@@ -479,7 +485,6 @@ public class BookNewActivity extends BaseActivity implements BotomSheetDialogFra
     }
 
     private void setRVOffer() {
-
         rvAvailble.setLayoutManager(new GridLayoutManager(BookNewActivity.this, 1));
         rvAvailble.setAdapter(new AvailableOfferAdapter(BookNewActivity.this, listOffer));
     }

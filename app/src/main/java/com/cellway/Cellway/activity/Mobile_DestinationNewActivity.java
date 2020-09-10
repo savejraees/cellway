@@ -262,9 +262,17 @@ public class Mobile_DestinationNewActivity extends BaseActivity {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull final Mobile_Adapter.MobileViewHolder mobileViewHolder, int position) {
+        public void onBindViewHolder(@NonNull final Mobile_Adapter.MobileViewHolder mobileViewHolder, final int position) {
             MobDestBrand model = mdest.get(position);
             Glide.with(context).load(model.getImage()).into(mobileViewHolder.grid_image);
+            mobileViewHolder.line.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    context.startActivity(new Intent(context, ProductActivityBrand.class)
+                            .putExtra("id",""+mdest.get(position).getId())
+                    );
+                }
+            });
         }
 
         @Override
