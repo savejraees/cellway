@@ -54,10 +54,11 @@ public class DeliveryFragment extends Fragment {
     static TextView txtPriceBookCOD, txtPricePayNow, txtAmountToPaidPayNow, txtAmountToPaidCOD;
     static int price, codCharge, bookAmount, deliveryAmount, finalAmountCOD = 0;
     static int paidAmount;
-    LinearLayout linearCOD;
+    static LinearLayout linearCOD;
 
     ArrayList<CartDetailDatumModel> cartListDetail = new ArrayList<>();
     ArrayList<String> cartList = new ArrayList<>();
+    ArrayList<Integer> cartListPrice = new ArrayList<>();
 
     View view;
 
@@ -110,6 +111,11 @@ public class DeliveryFragment extends Fragment {
             txtPricePayNow.setText("₹ " + value);
             paidAmount = deliveryAmount + value;
             txtAmountToPaidPayNow.setText("₹ " + paidAmount);
+
+//            if(paidAmount<5000){
+//                linearCOD.setVisibility(View.GONE);
+//                Log.d("asklddwqw",""+paidAmount);
+//            }
 
             txtPriceBookCOD.setText("₹ " + value);
             if (bookAmount < (codCharge + value)) {
@@ -165,6 +171,9 @@ public class DeliveryFragment extends Fragment {
 
                         for (int i = 0; i < cartListDetail.size(); i++) {
                             cartList.add(cartListDetail.get(i).getCategory());
+                        }
+                        for (int i = 0; i < cartListDetail.size(); i++) {
+                            cartListPrice.add(cartListDetail.get(i).getPrice());
                         }
 
                         setRVCart();
@@ -249,15 +258,15 @@ public class DeliveryFragment extends Fragment {
                 .build();
         IApiServices api = retrofit.create(IApiServices.class);
         Call<AddOrderModel> call = null;
-        if(paymentMode.equals("cod")){
-             int final_amount = finalAmountCOD+bookAmount;
+        if (paymentMode.equals("cod")) {
+            int final_amount = finalAmountCOD + bookAmount;
             call = api.postAddOrder(Api.key, sessonManager.getToken(), sessonManager.getQty(),
-                    ""+final_amount,txtAddressDelivery.getText().toString(),paymentMode,
-                    "deliery",""+bookAmount,""+codCharge,""+deliveryAmount );
-        }else {
+                    "" + final_amount, txtAddressDelivery.getText().toString(), paymentMode,
+                    "deliery", "" + bookAmount, "" + codCharge, "" + deliveryAmount);
+        } else {
             call = api.postAddOrder(Api.key, sessonManager.getToken(), sessonManager.getQty(),
-                    ""+paidAmount,txtAddressDelivery.getText().toString(),paymentMode,
-                    "deliery","0","0",""+deliveryAmount );
+                    "" + paidAmount, txtAddressDelivery.getText().toString(), paymentMode,
+                    "deliery", "0", "0", "" + deliveryAmount);
         }
 
         call.enqueue(new Callback<AddOrderModel>() {
@@ -268,15 +277,15 @@ public class DeliveryFragment extends Fragment {
                     sessonManager.hideProgress();
                     AddOrderModel AddressStatusModel = response.body();
                     if (AddressStatusModel.getCode().equals("200")) {
-                      //  sessonManager.setQty("");
+                        //  sessonManager.setQty("");
                         //startActivity(new Intent(getActivity(), CheckoutActivity.class));
-                        Intent intent = new Intent(getActivity(),CheckoutActivity.class);
-                        if(paymentMode.equals("cod")){
-                            intent.putExtra("amount",bookAmount);
-                        }else {
-                            intent.putExtra("amount",paidAmount);
+                        Intent intent = new Intent(getActivity(), CheckoutActivity.class);
+                        if (paymentMode.equals("cod")) {
+                            intent.putExtra("amount", bookAmount);
+                        } else {
+                            intent.putExtra("amount", paidAmount);
                         }
-                        intent.putExtra("orderId",AddressStatusModel.getOrderId());
+                        intent.putExtra("orderId", AddressStatusModel.getOrderId());
                         startActivity(intent);
                     } else {
                         Toast.makeText(getActivity(), "" + AddressStatusModel.getMsg(), Toast.LENGTH_SHORT).show();
@@ -294,6 +303,14 @@ public class DeliveryFragment extends Fragment {
 
     private void setRVCart() {
         if (!cartList.contains("mobile")) {
+            linearCOD.setVisibility(View.GONE);
+        }
+
+        int priceVisibility = 0;
+        for (int i = 0; i < cartListPrice.size(); i++) {
+            priceVisibility = priceVisibility + cartListPrice.get(i);
+        }
+        if (priceVisibility < 5000) {
             linearCOD.setVisibility(View.GONE);
         }
 

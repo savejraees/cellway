@@ -46,7 +46,7 @@ public class BotomSheetDialogFragmnt extends BottomSheetDialogFragment {
         v = inflater.inflate(R.layout.bottom_sheet_place_order, container, false);
         sessonManager = new SessonManager(getActivity());
         ImageView close = v.findViewById(R.id.closeBottom);
-        TextView txtContinue = v.findViewById(R.id.txtContinue);
+        final TextView txtContinue = v.findViewById(R.id.txtContinue);
         TextView tv_brand_Back = v.findViewById(R.id.tv_brand_Back);
         TextView txtPriceBack = v.findViewById(R.id.txtPriceBack);
         TextView txtPriceTemper = v.findViewById(R.id.txtPriceTemper);
@@ -89,6 +89,9 @@ public class BotomSheetDialogFragmnt extends BottomSheetDialogFragment {
                 imgCheckCover.setVisibility(View.VISIBLE);
                 linearAdd.setVisibility(View.GONE);
                 backCoverPrice = 1;
+
+                    txtContinue.setText("Add and Continue");
+
             }
         });
 
@@ -98,6 +101,10 @@ public class BotomSheetDialogFragmnt extends BottomSheetDialogFragment {
                 linearAdd.setVisibility(View.VISIBLE);
                 imgCheckCover.setVisibility(View.GONE);
                 backCoverPrice = 0;
+
+                if(backCoverPrice==0 && temperedPrice==0){
+                    txtContinue.setText("Skip and Continue");
+                }
             }
         });
         linearAddGlass.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +113,8 @@ public class BotomSheetDialogFragmnt extends BottomSheetDialogFragment {
                 imgCheckGlass.setVisibility(View.VISIBLE);
                 linearAddGlass.setVisibility(View.GONE);
                 temperedPrice = 1;
+
+                txtContinue.setText("Add and Continue");
             }
         });
 
@@ -115,6 +124,10 @@ public class BotomSheetDialogFragmnt extends BottomSheetDialogFragment {
                 linearAddGlass.setVisibility(View.VISIBLE);
                 imgCheckGlass.setVisibility(View.GONE);
                 temperedPrice = 0;
+
+                if(backCoverPrice==0 && temperedPrice==0){
+                    txtContinue.setText("Skip and Continue");
+                }
             }
         });
 

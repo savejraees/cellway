@@ -23,6 +23,8 @@ public class SessonManager {
     public static final String catId = "CatId";
     public static final String subCatId = "SubCatId";
     public static final String ProductId = "ProductId";
+    public static final String Price1 = "Price1";
+    public static final String Price2 = "Price2";
     public static final String type = "Type";
     public static final String CatIdAccess = "CatIdAccess";
     public Dialog mDialog;
@@ -85,6 +87,24 @@ public class SessonManager {
 
     public String getProductId() {
         return sharedPreference.getString(ProductId, "");
+    }
+
+    public void setPrice1(String p1) {
+        editor.putString(Price1, p1);
+        editor.commit();
+    }
+
+    public String getPrice1() {
+        return sharedPreference.getString(Price1, "");
+    }
+
+    public void setPrice2(String p2) {
+        editor.putString(Price2, p2);
+        editor.commit();
+    }
+
+    public String getPrice2() {
+        return sharedPreference.getString(Price2, "");
     }
     public void setType(String addressIntent) {
         editor.putString(type, addressIntent);

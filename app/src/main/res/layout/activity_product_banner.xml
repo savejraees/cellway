@@ -22,7 +22,7 @@
             android:id="@+id/txtProductHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="17dp"
             android:textColor="@color/white"
             android:layout_centerInParent="true"
             android:fontFamily="sans-serif"

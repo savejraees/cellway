@@ -66,14 +66,15 @@ public class BookNewActivity extends BaseActivity implements BotomSheetDialogFra
     ImageView imgCheck, imgBackBooking, img7DaysReplace, imgFreeDelivery;
     Button btnBuyNow, btnPinCode;
     static public Button btnAddCart;
-    TextView txtKnowMore, txtBrandModel, txtPrice, txtRamRoM, txtDisplayBook, txtRear, txtFront, txtBattery, txtWarranty, txtPinCode, txtAvailOffer;
+    TextView txtKnowMore, txtBrandModel, txtPrice, txtRamRoM, txtDisplayBook,
+            txtRear, txtFront, txtBattery, txtWarranty, txtPinCode, txtAvailOffer,txtProtection;
     Dialog dialog7Days, dialogCashOnDelivry;
     TextView txt7DaysOk, txtFreeDelivry, txtProcessorBook, txtWarrantyMOnthBok;
     EditText edtPin;
     static public TextView txtCartBook;
     ImageView img1;
     CardView cardProtection;
-   static public int backCoverPrice, temperedPrice, protectionPrice;
+    static public int backCoverPrice, temperedPrice, protectionPrice=0;
     String BrandName, ModelName;
     private ShimmerFrameLayout mShimmerViewContainer;
     NestedScrollView nestedBookNew;
@@ -102,6 +103,7 @@ public class BookNewActivity extends BaseActivity implements BotomSheetDialogFra
         txtWarranty = findViewById(R.id.txtWarranty);
         txtPinCode = findViewById(R.id.txtPinCode);
         txtAvailOffer = findViewById(R.id.txtAvailOffer);
+        txtProtection = findViewById(R.id.txtProtection);
         cardProtection = findViewById(R.id.cardProtection);
         img1 = findViewById(R.id.img1);
         rvAvailble = findViewById(R.id.rvAvailble);
@@ -176,12 +178,14 @@ public class BookNewActivity extends BaseActivity implements BotomSheetDialogFra
                         btnAddCart.setText("GO TO CART");
                         quantity = bookingStatusModel.getQty();
                     }
+
                     if (bookingStatusModel.getProtectionPrice() == 0) {
                         cardProtection.setVisibility(View.GONE);
                     }
                     backCoverPrice = bookingStatusModel.getBackcoverPrice();
                     temperedPrice = bookingStatusModel.getTemperedPrice();
-                    protectionPrice = bookingStatusModel.getProtectionPrice();
+                  //  protectionPrice = bookingStatusModel.getProtectionPrice();
+                    txtProtection.setText(""+bookingStatusModel.getProtectionPrice());
                     BrandName = bookingStatusModel.getBrandName();
                     ModelName = bookingStatusModel.getModelName();
 
@@ -199,7 +203,7 @@ public class BookNewActivity extends BaseActivity implements BotomSheetDialogFra
                     } else {
                         txtProcessorBook.setVisibility(View.GONE);
                     }
-                    if (bookingStatusModel.getWarrentyMonth() != null) {
+                    if ((bookingStatusModel.getWarrentyMonth() != null)&&(!bookingStatusModel.getWarrentyMonth().equals(""))) {
                         txtWarrantyMOnthBok.setText("* Warranty : " + bookingStatusModel.getWarrentyMonth());
                     } else {
                         txtWarrantyMOnthBok.setVisibility(View.GONE);
@@ -335,15 +339,19 @@ public class BookNewActivity extends BaseActivity implements BotomSheetDialogFra
         linearAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                protectionPrice =1;
                 linearAdd.setVisibility(View.GONE);
                 imgCheck.setVisibility(View.VISIBLE);
+                Log.d("fksjsk",""+protectionPrice);
             }
         });
         imgCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                protectionPrice = 0;
                 imgCheck.setVisibility(View.GONE);
                 linearAdd.setVisibility(View.VISIBLE);
+                Log.d("fksjsk",""+protectionPrice);
             }
         });
         imgBackBooking.setOnClickListener(new View.OnClickListener() {
@@ -544,7 +552,18 @@ public class BookNewActivity extends BaseActivity implements BotomSheetDialogFra
         if(sessonManager.getType().equals("banner")){
             startActivity(new Intent(BookNewActivity.this,ProductActivityBanner.class)
                     .putExtra("id",""+sessonManager.getProductId()).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-        }else {
+        }
+        else if(sessonManager.getType().equals("Brand")){
+            startActivity(new Intent(BookNewActivity.this,ProductActivityBrand.class)
+                    .putExtra("id",""+sessonManager.getProductId()).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        }
+        else if(sessonManager.getType().equals("Price")){
+            startActivity(new Intent(BookNewActivity.this,ProductPriceActivity.class)
+                    .putExtra("p1",""+sessonManager.getPrice1())
+                    .putExtra("p2",""+sessonManager.getPrice2())
+                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        }
+        else {
             startActivity(new Intent(BookNewActivity.this,ProductActivity.class)
                     .putExtra("id",""+sessonManager.getProductId())
                     .putExtra("type",""+sessonManager.getType()).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));

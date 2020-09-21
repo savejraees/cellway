@@ -80,6 +80,20 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ProductViewHol
         }else {
             holder.txtGbCart.setVisibility(View.GONE);
         }
+        if(arrProduct.get(position).getProtectionPrice()!=0){
+            holder.txtProtectionCart.setVisibility(View.VISIBLE);
+            holder.txtProtectionCart.setText("Mobile Protection Price - ₹ "+arrProduct.get(position).getProtectionPrice());
+        }
+        if(arrProduct.get(position).getBackcoverPrice()!=0){
+            holder.txtBackCoverCart.setVisibility(View.VISIBLE);
+            holder.txtBackCoverCart.setText("Back Cover Price - ₹ "+arrProduct.get(position).getBackcoverPrice());
+        }
+
+        if(arrProduct.get(position).getTemperedPrice()!=0){
+            holder.txtTempredCart.setVisibility(View.VISIBLE);
+            holder.txtTempredCart.setText("Tempered Glass Price - ₹ "+arrProduct.get(position).getTemperedPrice());
+        }
+
 
         holder.deduct_price_Cart.setText("" + arrProduct.get(position).getPrice() * arrProduct.get(position).getQty());
         if (arrProduct.get(position).getQty() == 1) {
@@ -89,14 +103,17 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ProductViewHol
         }
 
 
-        amount = amount + (arrProduct.get(position).getPrice() * arrProduct.get(position).getQty());
+        amount = amount + (arrProduct.get(position).getPrice() * arrProduct.get(position).getQty())
+                + arrProduct.get(position).getBackcoverPrice()+
+                arrProduct.get(position).getTemperedPrice()+arrProduct.get(position).getProtectionPrice();
 
         holder.relRemove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int phoneId = model.getId();
                 int pos = holder.getAdapterPosition();
-                int price = model.getPrice() * model.getQty();
+                int price = model.getPrice() * model.getQty()+ model.getProtectionPrice()
+                        +model.getTemperedPrice()+model.getBackcoverPrice();
 
                 Log.d("hjaskjkjop", "" + phoneId + "  " + sessonManager.getToken());
                 hitApiDelete(phoneId, pos, price);
@@ -171,7 +188,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ProductViewHol
 
     public class ProductViewHolder extends RecyclerView.ViewHolder {
         ImageView imgcart;
-        TextView txtBrandCart, deduct_price_Cart, original_price_Cart, txtOffCart, txtQnty, txtGbCart;
+        TextView txtBrandCart, deduct_price_Cart, original_price_Cart,
+                txtOffCart, txtQnty, txtGbCart,txtProtectionCart,txtBackCoverCart,txtTempredCart;
         RelativeLayout relRemove;
 
         public ProductViewHolder(@NonNull View itemView) {
@@ -185,6 +203,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ProductViewHol
             relRemove = itemView.findViewById(R.id.relRemove);
             txtQnty = itemView.findViewById(R.id.txtQnty);
             txtGbCart = itemView.findViewById(R.id.txtGbCart);
+            txtProtectionCart = itemView.findViewById(R.id.txtProtectionCart);
+            txtBackCoverCart = itemView.findViewById(R.id.txtBackCoverCart);
+            txtTempredCart = itemView.findViewById(R.id.txtTempredCart);
             original_price_Cart.setPaintFlags(original_price_Cart.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
         }

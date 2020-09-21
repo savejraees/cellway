@@ -39,7 +39,7 @@ public class ProductActivityBanner extends BaseActivity  implements RecyclerView
 
     RecyclerView rvYourMobileDest;
     ImageView imgBackProduct;
-    String type="OpenBox",id="",nameHeader,orderBy="lth";
+    String type="",id="",nameHeader,orderBy="lth";
     int currentPage = 1;
     int totalPage;
     ArrayList<ProductDatumModel> listDataBanner = new ArrayList<>();
@@ -270,16 +270,9 @@ public class ProductActivityBanner extends BaseActivity  implements RecyclerView
         showProgress(ProductActivityBanner.this);
         listDataBanner.clear();
 
+        Log.d("kjasoqwa",type+"   "+id+"   "+orderBy+"  "+currentPage);
 
         call = api.getProductBanner(Api.key, String.valueOf(currentPage), type,id,orderBy);
-//        if(((MainActivity)getActivity()).barcode.equals("")||((MainActivity)getActivity()).barcode.isEmpty()){
-//            call = api.hitOpenBoxApi(Url.key, String.valueOf(currentPage), "openbox");
-//        }
-//        else
-//        {
-//            currentPage =1;
-//            call = api.hitOpenBoxApiSearch(Url.key, String.valueOf(currentPage), "openbox",((MainActivity) getActivity()).barcode);
-//        }
 
         call.enqueue(new Callback<ProductStatusModel>() {
             @Override
@@ -310,6 +303,7 @@ public class ProductActivityBanner extends BaseActivity  implements RecyclerView
 
                     currentPage = currentPage + 1;
 
+//                    Log.d("jkweuqabhy",listDataBanner2.get(0).getBrandName()+" "+listDataBanner2.get(1).getBrandName());
 
                 } else {
                    showToast(String.valueOf(response));

@@ -32,7 +32,7 @@
             android:layout_toRightOf="@id/imgBackBooking"
             android:text="Your Booking"
             android:textColor="@color/white"
-            android:textSize="20dp" />
+            android:textSize="17dp" />
 
         <RelativeLayout
             android:id="@+id/relative_cart"
@@ -130,8 +130,11 @@
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/book_viewpagers"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="430dp" />
+                android:layout_height="520dp" />
 
             <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
                 android:id="@+id/dots_indicator"
@@ -458,14 +461,15 @@
                                         android:layout_height="wrap_content"
                                         android:text="₹"
                                         android:textColor="#000"
-                                        android:textStyle="bold"></TextView>
+                                        android:textStyle="bold"/>
 
                                     <TextView
+                                        android:id="@+id/txtProtection"
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
                                         android:gravity="center|left"
                                         android:paddingLeft="2dp"
-                                        android:text="5,999"
+                                        android:text=""
                                         android:textColor="#000"
                                         android:textStyle="bold" />
 

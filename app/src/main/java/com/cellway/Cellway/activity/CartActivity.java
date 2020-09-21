@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +36,7 @@ public class CartActivity extends BaseActivity {
     RecyclerView rvCartItem;
     TextView txtPlaceOrder;
     static TextView finalAmountCart;
+    ImageView imgBackCart;
     ArrayList<CartDetailDatumModel> cartList = new ArrayList<>();
 
     static public CardView cardMissinig;
@@ -48,6 +50,7 @@ public class CartActivity extends BaseActivity {
         sessonManager = new SessonManager(CartActivity.this);
         rvCartItem = findViewById(R.id.rvCartItem);
         txtPlaceOrder = findViewById(R.id.txtPlaceOrder);
+        imgBackCart = findViewById(R.id.imgBackCart);
         cardMissinig = findViewById(R.id.cardMissinig);
         finalAmountCart = findViewById(R.id.finalAmountCart);
         if(getIntent().hasExtra("Intent")){
@@ -64,6 +67,13 @@ public class CartActivity extends BaseActivity {
                     startActivity(new Intent(CartActivity.this, OrderSummaryActivity.class));
                 }
 
+            }
+        });
+
+        imgBackCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
 

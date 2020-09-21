@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+       <EditText
+           android:id="@+id/edtNeedHelp"
+           android:layout_width="match_parent"
+           android:layout_height="200dp"
+           android:layout_margin="10dp"
+           android:hint="Share your Problem"
+           android:gravity="start"
+           android:paddingTop="5dp"
+           android:paddingLeft="5dp"
+           android:background="@drawable/rectangleshape"/>
+
+
+        <Button
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/btnSubmitHelp"
+            android:text="Submit"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="#fff"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textSize="18sp"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

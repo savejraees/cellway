@@ -14,6 +14,7 @@ import com.cellway.Cellway.retrofitModel.AddressModel.StateStatusModel;
 import com.cellway.Cellway.retrofitModel.AddressModel.UpdateAddressModel;
 import com.cellway.Cellway.retrofitModel.BookingAccessoriesModel.BookingAccessoriesStatusModel;
 import com.cellway.Cellway.retrofitModel.BrandListModel.BrandStatus;
+import com.cellway.Cellway.retrofitModel.CancelOrderModel;
 import com.cellway.Cellway.retrofitModel.CartModel.AddCartModel;
 import com.cellway.Cellway.retrofitModel.CartModel.CartDetailStatusModel;
 import com.cellway.Cellway.retrofitModel.CartModel.DeleteCartModel;
@@ -22,12 +23,17 @@ import com.cellway.Cellway.retrofitModel.LoginRegisterModel.LoginStatusModel;
 import com.cellway.Cellway.retrofitModel.LoginRegisterModel.OtpGetModel;
 import com.cellway.Cellway.retrofitModel.LoginRegisterModel.RegisterStatusModel;
 import com.cellway.Cellway.retrofitModel.LoginRegisterModel.VerifyOtpModel;
+import com.cellway.Cellway.retrofitModel.NeedHelpModel;
+import com.cellway.Cellway.retrofitModel.OrderHistoryModel.OrderDetailStatusModel;
+import com.cellway.Cellway.retrofitModel.OrderHistoryModel.OrderHistoryStatusModel;
 import com.cellway.Cellway.retrofitModel.PasswordModel.ForgetPasswordModel;
 import com.cellway.Cellway.retrofitModel.PasswordModel.PasswordNewModel;
 import com.cellway.Cellway.retrofitModel.PaymentFormModel.CheckPaymentModel;
 import com.cellway.Cellway.retrofitModel.PaymentFormModel.PaymentFormStatusModel;
+import com.cellway.Cellway.retrofitModel.ProductBrandModel.ProductBrandStatusModel;
 import com.cellway.Cellway.retrofitModel.ProductCategoryModel.ProductCategoryStatusModel;
 import com.cellway.Cellway.retrofitModel.ProductModel.ProductStatusModel;
+import com.cellway.Cellway.retrofitModel.ProductPriceModel.ProductPriceStatusModel;
 import com.cellway.Cellway.retrofitModel.YourBookingModel.BookingStatusModel;
 import com.cellway.Cellway.retrofitModel.YourBookingModel.PincodeModel;
 import com.cellway.Cellway.retrofitModel.YourMobDestination.MobDestStatus;
@@ -74,9 +80,15 @@ public interface IApiServices {
 
     @FormUrlEncoded
     @POST("getproductlist_by_brand")
-    Call<ProductCategoryStatusModel> getProductByBrand(@Field("key") String key, @Field("page") String page, @Field("category") String category,
-                                                @Field("brand_id") String brand_id, @Field("series_search") String series_search,
-                                                @Field("warrenty_search") String warrenty_search, @Field("orderby") String orderby);
+    Call<ProductBrandStatusModel> getProductByBrand(@Field("key") String key, @Field("page") String page, @Field("category") String category,
+                                                    @Field("brand_id") String brand_id, @Field("series_search") String series_search,
+                                                    @Field("warrenty_search") String warrenty_search, @Field("orderby") String orderby);
+
+    @FormUrlEncoded
+    @POST("getproductlist_by_price")
+    Call<ProductPriceStatusModel> getProductByPrice(@Field("key") String key, @Field("page") String page, @Field("category") String category,
+                                                    @Field("brand_id") String brand_id, @Field("warrenty_search") String warrenty_search,
+                                                    @Field("orderby") String orderby, @Field("p1") String p1, @Field("p2") String p2);
 
     @FormUrlEncoded
     @POST("getphone_details")
@@ -121,11 +133,11 @@ public interface IApiServices {
 
     @FormUrlEncoded
     @POST("verify_otp")
-    Call<VerifyOtpModel> postVerifyOtp(@Field("key") String key, @Field("mobile") String mobile,@Field("otp") String otp);
+    Call<VerifyOtpModel> postVerifyOtp(@Field("key") String key, @Field("mobile") String mobile, @Field("otp") String otp);
 
     @FormUrlEncoded
     @POST("login")
-    Call<LoginStatusModel> postLogin(@Field("key") String key, @Field("mobile") String mobile, @Field("password") String password,@Field("token") String token);
+    Call<LoginStatusModel> postLogin(@Field("key") String key, @Field("mobile") String mobile, @Field("password") String password, @Field("token") String token);
 
     @FormUrlEncoded
     @POST("customer_forgetpassword")
@@ -133,14 +145,14 @@ public interface IApiServices {
 
     @FormUrlEncoded
     @POST("verify_otp_with_newpassword")
-    Call<PasswordNewModel> newPassword(@Field("key") String key, @Field("mobile") String mobile,@Field("otp") String otp,
-                                          @Field("password") String password,@Field("confirmpassword") String confirmpassword);
+    Call<PasswordNewModel> newPassword(@Field("key") String key, @Field("mobile") String mobile, @Field("otp") String otp,
+                                       @Field("password") String password, @Field("confirmpassword") String confirmpassword);
 
     @FormUrlEncoded
     @POST("customer_registers")
     Call<RegisterStatusModel> postRegister(@Field("key") String key, @Field("username") String username, @Field("mobile") String mobile,
                                            @Field("email") String email,
-                                           @Field("password") String password,@Field("token") String token);
+                                           @Field("password") String password, @Field("token") String token);
 
     @FormUrlEncoded
     @POST("getaccessories_category")
@@ -188,11 +200,31 @@ public interface IApiServices {
     Call<CheckPaymentModel> postCheckPayment(@Field("key") String key, @Field("userid") String userid, @Field("order_id") String order_id);
 
     @FormUrlEncoded
+    @POST("order_history")
+    Call<OrderHistoryStatusModel> getOrderHistory(@Field("key") String key, @Field("userid") String userid);
+
+    @FormUrlEncoded
+    @POST("order_details")
+    Call<OrderDetailStatusModel> getOrderDetail(@Field("key") String key, @Field("order_id") String order_id);
+
+    @FormUrlEncoded
+    @POST("cancel_order_item")
+    Call<CancelOrderModel> postCancelOrder(@Field("key") String key, @Field("item_id") int item_id);
+
+    @FormUrlEncoded
+    @POST("need_help")
+    Call<NeedHelpModel> postNeedHelp(@Field("key") String key, @Field("user_id") String user_id,@Field("message") String message);
+
+    @FormUrlEncoded
+    @POST("return_order_item")
+    Call<CancelOrderModel> postReturnOrder(@Field("key") String key, @Field("item_id") int item_id);
+
+    @FormUrlEncoded
     @POST("addorder")
-    Call<AddOrderModel> postAddOrder(@Field("key") String key, @Field("userid") String userid,@Field("total_qty") String total_qty,
-                                     @Field("total_amount") String total_amount,@Field("address") String address,
-                                     @Field("payment_mode") String payment_mode,@Field("delivery_type") String delivery_type,
-                                     @Field("booking_amount") String booking_amount,@Field("shipping_charge") String shipping_charge,
+    Call<AddOrderModel> postAddOrder(@Field("key") String key, @Field("userid") String userid, @Field("total_qty") String total_qty,
+                                     @Field("total_amount") String total_amount, @Field("address") String address,
+                                     @Field("payment_mode") String payment_mode, @Field("delivery_type") String delivery_type,
+                                     @Field("booking_amount") String booking_amount, @Field("shipping_charge") String shipping_charge,
                                      @Field("delivery_charge") String delivery_charge);
 
 

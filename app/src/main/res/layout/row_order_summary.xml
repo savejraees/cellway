@@ -81,22 +81,34 @@
 
                 </LinearLayout>
 
-<!--                <TextView-->
+                <TextView
+                    android:id="@+id/txtProtectionDelivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left"
+                    android:text=""
+                    android:visibility="gone"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/txtBackCoverDelivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left"
+                    android:text=""
+                    android:visibility="gone"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:gravity="center|left"-->
-<!--                    android:textSize="15dp"-->
-<!--                    android:text="3 Offer Available"-->
-<!--                    android:textColor="#0A950A"-->
-<!--                    android:textStyle="bold" />-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Delivery in 2-3 days"-->
-<!--                    android:textSize="14dp"-->
-<!--                    android:textColor="#818080"/>-->
+                <TextView
+                    android:id="@+id/txtTempredDelivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left"
+                    android:text=""
+                    android:textSize="15dp"
+                    android:visibility="gone"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 

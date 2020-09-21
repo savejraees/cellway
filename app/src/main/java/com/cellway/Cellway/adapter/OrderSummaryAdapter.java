@@ -52,13 +52,29 @@ public class OrderSummaryAdapter  extends RecyclerView.Adapter<OrderSummaryAdapt
             off = 100 - (arrProduct.get(position).getPrice() * 100) / arrProduct.get(position).getMrp();
             holder.txtOffCart.setText(off + "%off");
         }
-        amount = amount + arrProduct.get(position).getPrice();
+        amount = amount + arrProduct.get(position).getPrice() +
+                arrProduct.get(position).getTemperedPrice() +  arrProduct.get(position).getBackcoverPrice()+
+                arrProduct.get(position).getProtectionPrice();
 
         holder.original_price_Cart.setText("" + arrProduct.get(position).getMrp());
         if(arrProduct.get(position).getMrp()==0){
             holder.original_price_Cart.setVisibility(View.GONE);
         }
         holder.deduct_price_Cart.setText("" + arrProduct.get(position).getPrice());
+
+        if(arrProduct.get(position).getProtectionPrice()!=0){
+            holder.txtProtectionDelivery.setVisibility(View.VISIBLE);
+            holder.txtProtectionDelivery.setText("Mobile Protection Price - ₹ "+arrProduct.get(position).getProtectionPrice());
+        }
+        if(arrProduct.get(position).getBackcoverPrice()!=0){
+            holder.txtBackCoverDelivery.setVisibility(View.VISIBLE);
+            holder.txtBackCoverDelivery.setText("Back Cover Price - ₹ "+arrProduct.get(position).getBackcoverPrice());
+        }
+
+        if(arrProduct.get(position).getTemperedPrice()!=0){
+            holder.txtTempredDelivery.setVisibility(View.VISIBLE);
+            holder.txtTempredDelivery.setText("Tempered Glass Price - ₹ "+arrProduct.get(position).getTemperedPrice());
+        }
 
         DeliveryFragment.PriceBookWithCOD( amount);
         PickupFragment.PriceBookPickup( amount);
@@ -72,7 +88,8 @@ public class OrderSummaryAdapter  extends RecyclerView.Adapter<OrderSummaryAdapt
 
     public class ProductViewHolder extends RecyclerView.ViewHolder{
         ImageView imgcart;
-        TextView txtBrandCart, deduct_price_Cart, original_price_Cart, txtOffCart;
+        TextView txtBrandCart, deduct_price_Cart, original_price_Cart,
+                txtOffCart,txtProtectionDelivery,txtBackCoverDelivery,txtTempredDelivery;
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
             imgcart = itemView.findViewById(R.id.imgOrder);
@@ -80,6 +97,9 @@ public class OrderSummaryAdapter  extends RecyclerView.Adapter<OrderSummaryAdapt
             //  txtGbCart = itemView.findViewById(R.id.txtGbCart);
             deduct_price_Cart = itemView.findViewById(R.id.deduct_price_order);
             original_price_Cart = itemView.findViewById(R.id.original_price_order);
+            txtTempredDelivery = itemView.findViewById(R.id.txtTempredDelivery);
+            txtBackCoverDelivery = itemView.findViewById(R.id.txtBackCoverDelivery);
+            txtProtectionDelivery = itemView.findViewById(R.id.txtProtectionDelivery);
             txtOffCart = itemView.findViewById(R.id.txtOffOrder);
             original_price_Cart.setPaintFlags(original_price_Cart.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 

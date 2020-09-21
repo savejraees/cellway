@@ -25,18 +25,14 @@ import android.widget.TextView;
 import com.cellway.Cellway.R;
 import com.cellway.Cellway.Services.Api;
 import com.cellway.Cellway.adapter.ProductBrandAdapter;
-import com.cellway.Cellway.adapter.ProductCateogoryAdapter;
+import com.cellway.Cellway.adapter.ProductPriceAdapter;
 import com.cellway.Cellway.retrofitModel.ProductBrandModel.ProductBrandCategoryModel;
 import com.cellway.Cellway.retrofitModel.ProductBrandModel.ProductBrandDatumModel;
 import com.cellway.Cellway.retrofitModel.ProductBrandModel.ProductBrandSeriesModel;
-import com.cellway.Cellway.retrofitModel.ProductBrandModel.ProductBrandStatusModel;
-import com.cellway.Cellway.retrofitModel.ProductCategoryModel.ProductCategoryDatumModel;
-import com.cellway.Cellway.retrofitModel.ProductCategoryModel.ProductCategorySeriesModel;
-import com.cellway.Cellway.retrofitModel.ProductCategoryModel.ProductCategoryStatusModel;
-import com.cellway.Cellway.retrofitModel.ProductModel.ProductBrandModel;
-import com.cellway.Cellway.retrofitModel.ProductModel.ProductCategoryModel;
-import com.cellway.Cellway.retrofitModel.ProductModel.ProductDatumModel;
-import com.cellway.Cellway.retrofitModel.ProductModel.ProductStatusModel;
+import com.cellway.Cellway.retrofitModel.ProductPriceModel.ProductPriceBrandModel;
+import com.cellway.Cellway.retrofitModel.ProductPriceModel.ProductPriceCategoryModel;
+import com.cellway.Cellway.retrofitModel.ProductPriceModel.ProductPriceDatumModel;
+import com.cellway.Cellway.retrofitModel.ProductPriceModel.ProductPriceStatusModel;
 
 import java.util.ArrayList;
 
@@ -45,20 +41,20 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 @RequiresApi(api = Build.VERSION_CODES.M)
-public class ProductActivityBrand extends BaseActivity implements RecyclerView.OnScrollChangeListener{
+public class ProductPriceActivity extends BaseActivity implements RecyclerView.OnScrollChangeListener{
     RecyclerView rvYourMobileDest,rvSeries,rvCatogry;
     ImageView imgBackProduct;
-    String type="",id,nameHeader,orderBy="lth";
+    String type="",orderBy="lth";
     int currentPage = 1;
     int totalPage;
-    ArrayList<ProductBrandDatumModel> listDataBanner = new ArrayList<>();
-    ArrayList<ProductBrandDatumModel> listDataBanner2 = new ArrayList<>();
-    ArrayList<ProductBrandCategoryModel> listCategory = new ArrayList<>();
+    ArrayList<ProductPriceDatumModel> listDataBanner = new ArrayList<>();
+    ArrayList<ProductPriceDatumModel> listDataBanner2 = new ArrayList<>();
+    ArrayList<ProductPriceCategoryModel> listCategory = new ArrayList<>();
     ArrayList<String> listCat = new ArrayList<>();
     ArrayList<String> listSeriesId = new ArrayList<>();
-    ArrayList<ProductBrandSeriesModel> listSeries = new ArrayList<>();
-    Call<ProductBrandStatusModel> call;
-    ProductBrandAdapter adapter;
+    ArrayList<ProductPriceBrandModel> listSeries = new ArrayList<>();
+    Call<ProductPriceStatusModel> call;
+    ProductPriceAdapter adapter;
     TextView txtProductHeader;
     RelativeLayout relSort,relWarranty,relSeries,relCategory;
     LinearLayout linearSeries,linearWarranty,layoutPrice,layoutCategory;
@@ -66,20 +62,23 @@ public class ProductActivityBrand extends BaseActivity implements RecyclerView.O
     TextView txtWarrantyIN,txtWarrantyOut,txtSeriesApply,txtCatApply;
     ImageView imgSeriesUp,imgWarrantyUp,imgPriceUp,imgCatUp;
     String warranty = "",seriesId="";
+
+    String p1="1",p2="1100000";
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_product_brand);
+        setContentView(R.layout.activity_product_price);
         init();
-        id = getIntent().getStringExtra("id");
+        p1 = getIntent().getStringExtra("p1");
+        p2 = getIntent().getStringExtra("p2");
 
         hitApiProduct();
         onClick();
 
         rvYourMobileDest.setOnScrollChangeListener(this);
-        rvYourMobileDest.setLayoutManager(new GridLayoutManager(ProductActivityBrand.this, 1));
-        adapter = new ProductBrandAdapter(ProductActivityBrand.this, listDataBanner2,"Brand",id);
+        rvYourMobileDest.setLayoutManager(new GridLayoutManager(ProductPriceActivity.this, 1));
+        adapter = new ProductPriceAdapter(ProductPriceActivity.this, listDataBanner2,"Price",p1,p2);
         rvYourMobileDest.setAdapter(adapter);
 
         imgBackProduct.setOnClickListener(new View.OnClickListener() {
@@ -91,30 +90,32 @@ public class ProductActivityBrand extends BaseActivity implements RecyclerView.O
     }
 
     private void init() {
-        rvYourMobileDest = findViewById(R.id.rvYourMobileDestPB);
-        rvSeries = findViewById(R.id.rvSeriesPB);
-        rvCatogry = findViewById(R.id.rvCatogryPB);
-        imgBackProduct = findViewById(R.id.imgBackProductPB);
-        txtProductHeader = findViewById(R.id.txtProductHeaderPB);
-        relSeries = findViewById(R.id.relSeriesPB);
-        relCategory = findViewById(R.id.relCategoryPB);
-        relWarranty = findViewById(R.id.relWarrantyPB);
-        relSort = findViewById(R.id.relSortPB);
-        linearSeries = findViewById(R.id.linearSeriesPB);
-        linearWarranty = findViewById(R.id.linearWarrantyPB);
-        layoutPrice = findViewById(R.id.layoutPricePB);
-        layoutCategory = findViewById(R.id.layoutCategoryPB);
-        radioPrice = findViewById(R.id.radioPricePB);
-        txtWarrantyIN = findViewById(R.id.txtWarrantyINPB);
-        txtWarrantyOut = findViewById(R.id.txtWarrantyOutPB);
-        txtSeriesApply = findViewById(R.id.txtSeriesApplyPB);
-        txtCatApply = findViewById(R.id.txtCatApplyPB);
-        imgPriceUp = findViewById(R.id.imgPriceUpPB);
-        imgCatUp = findViewById(R.id.imgCatUpPB);
-        imgWarrantyUp = findViewById(R.id.imgWarrantyUpPB);
-        imgSeriesUp = findViewById(R.id.imgSeriesUpPB);
+        rvYourMobileDest = findViewById(R.id.rvYourMobileDestPR);
+        rvSeries = findViewById(R.id.rvSeriesPR);
+        rvCatogry = findViewById(R.id.rvCatogryPR);
+        imgBackProduct = findViewById(R.id.imgBackProductPR);
+        txtProductHeader = findViewById(R.id.txtProductHeaderPR);
+        relSeries = findViewById(R.id.relSeriesPR);
+        relCategory = findViewById(R.id.relCategoryPR);
+        relWarranty = findViewById(R.id.relWarrantyPR);
+        relSort = findViewById(R.id.relSortPR);
+        linearSeries = findViewById(R.id.linearSeriesPR);
+        linearWarranty = findViewById(R.id.linearWarrantyPR);
+        layoutPrice = findViewById(R.id.layoutPricePR);
+        layoutCategory = findViewById(R.id.layoutCategoryPR);
+        radioPrice = findViewById(R.id.radioPricePR);
+        txtWarrantyIN = findViewById(R.id.txtWarrantyINPR);
+        txtWarrantyOut = findViewById(R.id.txtWarrantyOutPR);
+        txtSeriesApply = findViewById(R.id.txtSeriesApplyPR);
+        txtCatApply = findViewById(R.id.txtCatApplyPR);
+        imgPriceUp = findViewById(R.id.imgPriceUpPR);
+        imgCatUp = findViewById(R.id.imgCatUpPR);
+        imgWarrantyUp = findViewById(R.id.imgWarrantyUpPR);
+        imgSeriesUp = findViewById(R.id.imgSeriesUpPR);
 
     }
+
+
     private void onClick() {
         relSeries.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -314,6 +315,69 @@ public class ProductActivityBrand extends BaseActivity implements RecyclerView.O
 
     }
 
+    private void hitApiProduct() {
+        showProgress(ProductPriceActivity.this);
+        listDataBanner.clear();
+
+        Log.d("adlskjop",orderBy);
+        if(p1.equals("Below")){
+            call = api.getProductByPrice(Api.key, String.valueOf(currentPage), type,seriesId,warranty,orderBy,"0",p2);
+        }else {
+            call = api.getProductByPrice(Api.key, String.valueOf(currentPage), type,seriesId,warranty,orderBy,p1,p2);
+        }
+
+
+        call.enqueue(new Callback<ProductPriceStatusModel>() {
+            @Override
+            public void onResponse(Call<ProductPriceStatusModel> call, Response<ProductPriceStatusModel> response) {
+                hideProgress();
+
+                if (response.isSuccessful()) {
+                    ProductPriceStatusModel model = response.body();
+                    totalPage = model.getTotalPages();
+
+                    if(p1.equals("Below")){
+                        txtProductHeader.setText(p1+" "+ p2);
+                    }
+                    else if(p2.equals("1500000")){
+                        txtProductHeader.setText("Above "+p1);
+                    }
+                    else {
+                        txtProductHeader.setText(p1+" - "+p2);
+                    }
+
+
+                    if(listCategory.size()==0){
+                        listCategory = model.getCategory();
+                        rvCatogry.setLayoutManager(new LinearLayoutManager(ProductPriceActivity.this,RecyclerView.HORIZONTAL,false));
+                        rvCatogry.setAdapter(new CategoryAdapter(ProductPriceActivity.this,listCategory));
+                    }
+
+                    if(listSeries.size()==0){
+                        listSeries = model.getBrands();
+                        rvSeries.setLayoutManager(new GridLayoutManager(ProductPriceActivity.this,3));
+                        rvSeries.setAdapter(new SeriesAdapter(ProductPriceActivity.this,listSeries));
+                    }
+
+                    listDataBanner = model.getData();
+                    listDataBanner2.addAll(listDataBanner);
+                    adapter.notifyDataSetChanged();
+
+                    currentPage = currentPage + 1;
+
+                } else {
+                    showToast(String.valueOf(response));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ProductPriceStatusModel> call, Throwable t) {
+                hideProgress();
+                showToast(t.getMessage());
+            }
+        });
+    }
+
     private boolean isLastItemDisplaying(RecyclerView recyclerView) {
         if (recyclerView.getAdapter().getItemCount() != 0) {
             int lastVisibleItemPosition = ((LinearLayoutManager) recyclerView.getLayoutManager()).findLastCompletelyVisibleItemPosition();
@@ -332,60 +396,12 @@ public class ProductActivityBrand extends BaseActivity implements RecyclerView.O
             }
         }
     }
-    private void hitApiProduct() {
-        showProgress(ProductActivityBrand.this);
-        listDataBanner.clear();
-
-        Log.d("adlskjop",orderBy);
-        call = api.getProductByBrand(Api.key, String.valueOf(currentPage), type,id,seriesId,warranty,orderBy);
-
-        call.enqueue(new Callback<ProductBrandStatusModel>() {
-            @Override
-            public void onResponse(Call<ProductBrandStatusModel> call, Response<ProductBrandStatusModel> response) {
-                hideProgress();
-
-                if (response.isSuccessful()) {
-                    ProductBrandStatusModel model = response.body();
-                    totalPage = model.getTotalPages();
-                    txtProductHeader.setText(model.getBrandName());
-
-                    if(listCategory.size()==0){
-                        listCategory = model.getCategory();
-                        rvCatogry.setLayoutManager(new LinearLayoutManager(ProductActivityBrand.this,RecyclerView.HORIZONTAL,false));
-                        rvCatogry.setAdapter(new CategoryAdapter(ProductActivityBrand.this,listCategory));
-                    }
-
-                    if(listSeries.size()==0){
-                        listSeries = model.getSeries();
-                        rvSeries.setLayoutManager(new GridLayoutManager(ProductActivityBrand.this,3));
-                        rvSeries.setAdapter(new SeriesAdapter(ProductActivityBrand.this,listSeries));
-                    }
-
-                    listDataBanner = model.getData();
-                    listDataBanner2.addAll(listDataBanner);
-                    adapter.notifyDataSetChanged();
-
-                    currentPage = currentPage + 1;
-
-                } else {
-                    showToast(String.valueOf(response));
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ProductBrandStatusModel> call, Throwable t) {
-                hideProgress();
-                showToast(t.getMessage());
-            }
-        });
-    }
-
 
     public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ProductViewHolder> {
 
         Context context;
-        ArrayList<ProductBrandCategoryModel> arrProduct;
-        public CategoryAdapter(Context context, ArrayList<ProductBrandCategoryModel> arrProduct) {
+        ArrayList<ProductPriceCategoryModel> arrProduct;
+        public CategoryAdapter(Context context, ArrayList<ProductPriceCategoryModel> arrProduct) {
             this.context = context;
             this.arrProduct = arrProduct;
         }
@@ -402,7 +418,7 @@ public class ProductActivityBrand extends BaseActivity implements RecyclerView.O
 
         @Override
         public void onBindViewHolder(@NonNull final CategoryAdapter.ProductViewHolder holder, int position) {
-            final ProductBrandCategoryModel model = arrProduct.get(position);
+            final ProductPriceCategoryModel model = arrProduct.get(position);
             holder.txtCat.setText(model.getTitle());
 
             holder.txtCat.setBackgroundResource(model.isSelected() ? R.drawable.search_round : R.drawable.search_round_white);
@@ -445,12 +461,11 @@ public class ProductActivityBrand extends BaseActivity implements RecyclerView.O
         }
     }
 
-
     public class SeriesAdapter extends RecyclerView.Adapter<SeriesAdapter.ProductViewHolder> {
 
         Context context;
-        ArrayList<ProductBrandSeriesModel> arrProduct;
-        public SeriesAdapter(Context context, ArrayList<ProductBrandSeriesModel> arrProduct) {
+        ArrayList<ProductPriceBrandModel> arrProduct;
+        public SeriesAdapter(Context context, ArrayList<ProductPriceBrandModel> arrProduct) {
             this.context = context;
             this.arrProduct = arrProduct;
         }
@@ -467,8 +482,8 @@ public class ProductActivityBrand extends BaseActivity implements RecyclerView.O
 
         @Override
         public void onBindViewHolder(@NonNull final SeriesAdapter.ProductViewHolder holder, int position) {
-            final ProductBrandSeriesModel model = arrProduct.get(position);
-            holder.txtBrand.setText(model.getSeriesName());
+            final ProductPriceBrandModel model = arrProduct.get(position);
+            holder.txtBrand.setText(model.getBrandName());
 
             holder.txtBrand.setBackgroundResource(model.isSelected() ? R.drawable.search_round : R.drawable.search_round_white);
 
@@ -478,14 +493,14 @@ public class ProductActivityBrand extends BaseActivity implements RecyclerView.O
                     model.setSelected(!model.isSelected());
                     holder.txtBrand.setBackgroundResource(model.isSelected() ? R.drawable.search_round : R.drawable.search_round_white);
                     if (model.isSelected() == true) {
-                        if(listSeriesId.contains(""+model.getSeriesName())){
+                        if(listSeriesId.contains(""+model.getBrandName())){
                         }else {
-                            listSeriesId.add(""+model.getSeriesName());
+                            listSeriesId.add(""+model.getBrandName());
                         }
 
                     } else {
-                        if (listSeriesId.contains(""+model.getSeriesName())) {
-                            listSeriesId.remove(""+model.getSeriesName());
+                        if (listSeriesId.contains(""+model.getBrandName())) {
+                            listSeriesId.remove(""+model.getBrandName());
                         }
 
                     }
@@ -511,8 +526,7 @@ public class ProductActivityBrand extends BaseActivity implements RecyclerView.O
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(ProductActivityBrand.this,Mobile_DestinationNewActivity.class));
+        startActivity(new Intent(ProductPriceActivity.this,Mobile_DestinationNewActivity.class));
         finishAffinity();
     }
-
 }

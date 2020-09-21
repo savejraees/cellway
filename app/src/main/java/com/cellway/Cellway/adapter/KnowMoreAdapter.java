@@ -51,9 +51,9 @@ public class KnowMoreAdapter extends RecyclerView.Adapter<KnowMoreAdapter.Produc
             @Override
             public void onClick(View view) {
                 if(!sessonManager.getToken().isEmpty()){
-                    context.startActivity(new Intent(context, GenuineKnowMoreActivity.class)
-                            .putExtra("id",""+model.getId())
-                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+//                    context.startActivity(new Intent(context, GenuineKnowMoreActivity.class)
+//                            .putExtra("id",""+model.getId())
+//                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 }else {
                     context.startActivity(new Intent(context, LoginActivityNew.class)
                     .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));

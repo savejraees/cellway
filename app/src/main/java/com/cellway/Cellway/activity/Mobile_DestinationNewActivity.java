@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -202,6 +203,7 @@ public class Mobile_DestinationNewActivity extends BaseActivity {
         nestedMobDest = findViewById(R.id.nestedMobDest);
         imgOffer = findViewById(R.id.imgOffer);
         txtCartMobDest = findViewById(R.id.txtCartMobDest);
+        Log.d("asjuie",sessonManager.getToken());
 
         if ((!sessonManager.getQty().isEmpty()&&!sessonManager.getToken().isEmpty())) {
             txtCartMobDest.setVisibility(View.VISIBLE);

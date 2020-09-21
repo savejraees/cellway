@@ -8,20 +8,29 @@
     android:orientation="vertical"
     tools:context=".activity.MyOrderActivity">
 
-    <androidx.cardview.widget.CardView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp">
+        android:layout_height="?attr/actionBarSize"
+        android:background="#027BE9"
+        tools:ignore="MissingConstraints">
 
-        <TextView
-            android:layout_margin="10dp"
+        <ImageView
+            android:id="@+id/imgBackMyOrder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select the item you want to track,return or need help with"
-            android:textColor="@color/black"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/arrow_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:fontFamily="sans-serif"
-            android:textSize="18dp"/>
-    </androidx.cardview.widget.CardView>
+            android:text="My Orders"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+    </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMyOrder"

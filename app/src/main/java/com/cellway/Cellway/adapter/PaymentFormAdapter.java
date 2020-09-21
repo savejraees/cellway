@@ -76,9 +76,10 @@ public class PaymentFormAdapter extends RecyclerView.Adapter<PaymentFormAdapter.
                     index = getAdapterPosition();
                     if(chechPayment.isChecked()){
                         onClick.ClickPayment(getAdapterPosition());
-                    }else {
-                        onClick.ClickPayment(-1);
                     }
+//                    else {
+//                        onClick.ClickPayment(-1);
+//                    }
 
                 }
             });
